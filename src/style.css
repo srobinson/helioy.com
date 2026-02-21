@@ -1,0 +1,422 @@
+/* ═══════════════════════════════════════════════
+   HELIOY — every token counts
+   ═══════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #08080a;
+  --surface: #0f0f12;
+  --border: #1a1a1f;
+  --text: #e2ddd5;
+  --text-dim: #7a746c;
+  --text-muted: #3d3a36;
+  --accent: #c9a84c;
+  --accent-dim: rgba(201, 168, 76, 0.15);
+
+  --serif: 'Instrument Serif', Georgia, serif;
+  --mono: 'Martian Mono', 'SF Mono', monospace;
+
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: clamp(0.75rem, 0.65rem + 0.5vw, 0.875rem);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── CANVAS ──────────────────────────────────── */
+
+#s3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HERO ────────────────────────────────────── */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(4.5rem, 3rem + 8vw, 11rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 1.4s var(--ease-out) forwards;
+  opacity: 0;
+}
+
+.tagline {
+  font-family: var(--mono);
+  font-size: clamp(0.65rem, 0.55rem + 0.5vw, 0.8rem);
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+  animation: fadeUp 1.4s var(--ease-out) 0.15s forwards;
+  opacity: 0;
+}
+
+.intro {
+  font-size: clamp(0.8rem, 0.7rem + 0.4vw, 0.95rem);
+  font-weight: 300;
+  color: var(--text-dim);
+  max-width: 34ch;
+  line-height: 1.9;
+  animation: fadeUp 1.4s var(--ease-out) 0.3s forwards;
+  opacity: 0;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeUp 1.4s var(--ease-out) 0.8s forwards;
+  opacity: 0;
+}
+
+.scroll-hint span {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: pulse 2.4s ease-in-out infinite 1.5s;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.2; }
+  50%      { opacity: 0.8; }
+}
+
+/* ── THESIS ──────────────────────────────────── */
+
+.thesis {
+  padding: 12vh 2rem 16vh;
+  max-width: 50ch;
+  margin: 0 auto;
+}
+
+.thesis p {
+  font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.1rem);
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+.thesis .emphasis {
+  color: var(--text);
+  font-weight: 500;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── STACK ───────────────────────────────────── */
+
+.stack {
+  padding: 8vh 2rem 12vh;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.section-sub {
+  font-size: clamp(0.8rem, 0.7rem + 0.35vw, 0.9rem);
+  color: var(--text-dim);
+  margin-bottom: 5rem;
+  font-weight: 300;
+}
+
+.tool {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.tool:last-of-type {
+  border-bottom: 1px solid var(--border);
+}
+
+.tool-category {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 0.35rem;
+}
+
+.tool-content h3 {
+  font-family: var(--mono);
+  font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+  font-weight: 600;
+  margin-bottom: 0.875rem;
+  line-height: 1.3;
+}
+
+.tool-content h3 a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.25s var(--ease);
+}
+
+.tool-content h3 a:hover {
+  color: var(--accent);
+}
+
+.tool-content > p {
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+  max-width: 48ch;
+  font-weight: 300;
+}
+
+.tool-metric {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--accent-dim);
+  margin-bottom: 1rem;
+}
+
+.tool-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.tool-meta code {
+  color: var(--text-dim);
+  background: var(--surface);
+  padding: 0.2rem 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+}
+
+/* ── CTA ─────────────────────────────────────── */
+
+.cta {
+  padding: 14vh 2rem 8vh;
+  text-align: center;
+}
+
+.open-source {
+  font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem);
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 3rem;
+  letter-spacing: -0.01em;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 0.65rem 1.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s var(--ease);
+  margin-bottom: 4rem;
+}
+
+.github-link:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+.github-link svg {
+  transition: transform 0.3s var(--ease);
+}
+
+.github-link:hover svg {
+  transform: scale(1.1);
+}
+
+.install-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 460px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+}
+
+.install-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0;
+  gap: 1rem;
+}
+
+.install-line code {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.install-line::before {
+  content: '$';
+  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+
+.install-comment {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ── FOOTER ──────────────────────────────────── */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 2rem;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  max-width: 820px;
+  margin: 0 auto;
+  letter-spacing: 0.05em;
+}
+
+.wordmark-small {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* ── REVEAL ──────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger siblings */
+.tool.reveal:nth-child(3) { transition-delay: 0s; }
+.tool.reveal:nth-child(4) { transition-delay: 0.08s; }
+.tool.reveal:nth-child(5) { transition-delay: 0.16s; }
+.tool.reveal:nth-child(6) { transition-delay: 0.24s; }
+
+/* ── RESPONSIVE ──────────────────────────────── */
+
+@media (max-width: 640px) {
+  .tool {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .tool-category {
+    padding-top: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .install-block {
+    padding: 1rem;
+  }
+
+  .install-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .install-comment {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .wordmark {
+    font-size: 3.5rem;
+  }
+}

@@ -1,0 +1,29 @@
+import './style.css';
+import { initS3 } from './s3';
+
+// ── S³ visualization ────────────────────────────
+const canvas = document.getElementById('s3') as HTMLCanvasElement;
+if (canvas) initS3(canvas);
+
+// ── Canvas fade on scroll ───────────────────────
+const hero = document.querySelector('.hero') as HTMLElement;
+if (canvas && hero) {
+  window.addEventListener('scroll', () => {
+    const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
+    canvas.style.opacity = String(1 - progress * 0.9);
+  }, { passive: true });
+}
+
+// ── Reveal on scroll ────────────────────────────
+const observer = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    }
+  },
+  { threshold: 0.15, rootMargin: '0px 0px -40px 0px' },
+);
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));

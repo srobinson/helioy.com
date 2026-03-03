@@ -39,14 +39,14 @@ posthog.init("phc_TMDFaW5UswKttn4RRayRwg5o6MVw4Enoz1vCMjaQIPK", {
 });
 
 // ── Link click tracking ─────────────────────────
-document.querySelectorAll<HTMLAnchorElement>("a[href]").forEach((link) => {
-  link.addEventListener("click", () => {
-    const tool = link.closest(".tool");
-    const category = tool?.querySelector(".tool-category")?.textContent?.trim();
-    posthog.capture("link_clicked", {
-      url: link.href,
-      text: link.textContent?.trim(),
-      section: category ?? (link.closest(".cta") ? "cta" : "other"),
+document
+  .querySelectorAll<HTMLAnchorElement>("a[data-track]")
+  .forEach((link) => {
+    link.addEventListener("click", () => {
+      posthog.capture("link_clicked", {
+        url: link.href,
+        text: link.textContent?.trim(),
+        section: link.dataset.track,
+      });
     });
   });
-});

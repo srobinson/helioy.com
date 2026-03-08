@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>helioy — every token counts</title>
   <meta name="description"
     content="Infrastructure for AI agents that waste less and remember more. Geometric memory, code intelligence, document search — all as MCP servers." />
@@ -17,114 +17,249 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Martian+Mono:wght@100..800&display=swap"
     rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </head>
 
-<body>
-  <canvas id="s3" aria-hidden="true"></canvas>
+<body
+  class="bg-[#0f0f0f] text-white min-h-screen flex flex-col relative overflow-x-hidden font-sans selection:bg-[#F15A29] selection:text-white p-6 md:p-12 lg:p-20 antialiased">
 
-  <main>
-    <!-- ── HERO ──────────────────────────────────────── -->
-    <section class="hero">
-      <h1 class="wordmark">helioy</h1>
-      <p class="tagline">every token counts</p>
-      <p class="intro">Infrastructure for AI agents<br />that waste less and remember more.</p>
-      <div class="scroll-hint" aria-hidden="true"><span></span></div>
-    </section>
+  <canvas id="s3" aria-hidden="true" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
-    <!-- ── THESIS ────────────────────────────────────── -->
-    <section class="thesis">
-      <p class="reveal">Context windows are finite.</p>
-      <p class="reveal">Most tokens are wasted on navigation — reading files to find files, scanning docs to find
-        sections, re-learning what was known yesterday.</p>
-      <p class="reveal emphasis">We build the tools to eliminate that waste.</p>
-    </section>
+  <!-- Background Graphic -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div
+      class="absolute top-0 right-0 text-9xl font-semibold text-white/[0.02] select-none scale-[4] md:scale-[6] lg:scale-[8] origin-top-right translate-x-16 translate-y-16">
+      H
+    </div>
+  </div>
 
-    <!-- ── STACK ─────────────────────────────────────── -->
-    <section class="stack">
-      <h2 class="section-label reveal">the stack</h2>
-      <p class="section-sub reveal">Three problems. Three libraries. One orchestrator.</p>
-
-      <article class="tool reveal">
-        <div class="tool-category">memory</div>
-        <div class="tool-content">
-          <h3><a href="https://github.com/srobinson/attention-matters" target="_blank" rel="noopener" data-track="memory">attention
-              matters</a></h3>
-          <p>Geometric recall on the S&#xB3; hypersphere. Quaternion drift, phasor interference, Kuramoto coupling. One
-            brain per developer, not per project.</p>
-          <div class="tool-meta">
-            <span class="tech">Rust · MCP</span>
-            <code>npm i attention-matters</code>
-          </div>
-        </div>
-      </article>
-
-      <article class="tool reveal">
-        <div class="tool-category">code</div>
-        <div class="tool-content">
-          <h3><a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener" data-track="code">frontmatter matters</a></h3>
-          <p>Structural metadata for source files. Auto-generated sidecars via tree-sitter. LLMs know what a file does
-            without reading it.</p>
-          <div class="tool-metric">80–90% fewer file reads</div>
-          <div class="tool-meta">
-            <span class="tech">Rust · tree-sitter · MCP</span>
-            <code>npm i frontmatter-matters</code>
-          </div>
-        </div>
-      </article>
-
-      <article class="tool reveal">
-        <div class="tool-category">documents</div>
-        <div class="tool-content">
-          <h3><a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener" data-track="documents">mdcontext</a></h3>
-          <p>Structural intelligence for markdown. Hybrid search with BM25 and semantic embeddings. Section-level
-            indexing.</p>
-          <div class="tool-metric">80%+ token compression</div>
-          <div class="tool-meta">
-            <span class="tech">TypeScript · Effect · MCP</span>
-            <code>npm i mdcontext</code>
-          </div>
-        </div>
-      </article>
-
-      <article class="tool reveal">
-        <div class="tool-category">orchestration</div>
-        <div class="tool-content">
-          <h3><a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener" data-track="orchestration">nancyr</a></h3>
-          <p>Multi-agent orchestrator wrapping Claude Code CLI. Hub-and-spoke coordination with token budgets. Compiles
-            context. Learns from outcomes.</p>
-          <div class="tool-meta">
-            <span class="tech">Rust · Claude Code · TUI</span>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- ── CTA ───────────────────────────────────────── -->
-    <section class="cta">
-      <p class="open-source reveal">all open source. all composable.</p>
-      <a class="github-link reveal" href="https://github.com/srobinson" target="_blank" rel="noopener" data-track="cta">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
-          <path
-            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-        </svg>
-        srobinson
-      </a>
-      <div class="install-block reveal">
-        <div class="install-line"><code>npx -y attention-matters serve</code><span class="install-comment">#
-            memory</span></div>
-        <div class="install-line"><code>npx -y frontmatter-matters serve</code><span class="install-comment">#
-            code</span></div>
-        <div class="install-line"><code>npx -y --package mdcontext mdcontext-mcp</code><span class="install-comment">#
-            docs</span></div>
+  <!-- Header / Logo -->
+  <header class="relative z-10 mb-20 md:mb-32 max-w-6xl mx-auto w-full">
+    <div class="flex items-center gap-3 select-none">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+        class="flex-shrink-0">
+        <path d="M14 2L2.5 8.5V19.5L14 26L25.5 19.5V8.5L14 2Z" stroke="white" stroke-width="2" stroke-linejoin="round">
+        </path>
+        <path d="M14 14L2.5 8.5M14 14L25.5 8.5M14 14V26" stroke="white" stroke-opacity="0.2" stroke-width="2"
+          stroke-linejoin="round"></path>
+        <circle cx="14" cy="14" r="4" fill="#F15A29"></circle>
+      </svg>
+      <div class="text-xl md:text-2xl font-semibold tracking-tighter uppercase text-white mt-0.5">
+        HELIOY
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- ── FOOTER ────────────────────────────────────── -->
-    <footer>
-      <span class="wordmark-small">helioy</span>
-      <span class="year">2026</span>
-    </footer>
+  <main class="relative z-10 flex-grow flex flex-col w-full max-w-6xl mx-auto">
+
+    <!-- Hero Section -->
+    <div class="flex flex-col max-w-4xl mb-32 md:mb-48">
+      <div class="flex items-center gap-2 text-[#F15A29] text-xs md:text-sm font-medium uppercase tracking-widest mb-8">
+        <iconify-icon icon="solar:cpu-linear" stroke-width="1.5"></iconify-icon>
+        <span>every token counts</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1] mb-10">
+        Infrastructure for AI agents <br class="hidden lg:block">
+        <span class="text-zinc-500">that waste less and remember more.</span>
+      </h1>
+
+      <div class="flex flex-col gap-6 max-w-2xl">
+        <h2 class="text-xl md:text-2xl font-medium tracking-tight text-zinc-200">
+          Context windows are finite.
+        </h2>
+        <div class="flex flex-col gap-4 text-base md:text-lg text-zinc-400 leading-relaxed">
+          <p>
+            Most tokens are wasted on navigation — reading files to find files, scanning docs to find
+            sections, re-learning what was known yesterday.
+          </p>
+          <p>
+            We build the tools to eliminate that waste.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- The Stack Section -->
+    <div class="flex flex-col w-full mb-24">
+      <div class="flex flex-col gap-3 mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-white">
+          the stack
+        </h2>
+        <p class="text-base md:text-lg text-zinc-500 font-medium">
+          Three problems. Three libraries. One orchestrator.
+        </p>
+      </div>
+
+      <!-- Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+        <!-- Card 1: Memory -->
+        <div
+          class="group relative flex flex-col bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors duration-300 rounded-3xl p-8 md:p-10">
+          <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest mb-8">
+            <iconify-icon icon="solar:database-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
+            <span>memory</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
+            <a href="https://github.com/srobinson/attention-matters" target="_blank" rel="noopener" data-track="memory"
+              class="hover:text-[#F15A29] transition-colors">attention matters</a>
+          </h3>
+          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-8 flex-grow">
+            Geometric recall on the S³ hypersphere. Quaternion drift, phasor interference, Kuramoto
+            coupling. One brain per developer, not per project.
+          </p>
+          <div class="flex flex-wrap items-center gap-2 mb-8 mt-auto">
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Rust</span>
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">MCP</span>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#0a0a0a] border border-white/[0.05] rounded-xl p-4 font-mono text-xs text-zinc-400 group-hover:text-zinc-300 transition-colors">
+            <span>npm i attention-matters</span>
+            <button class="text-zinc-500 hover:text-white cursor-pointer transition-colors flex items-center"
+              aria-label="Copy command">
+              <iconify-icon icon="solar:copy-linear" stroke-width="1.5" class="text-base"></iconify-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Code -->
+        <div
+          class="group relative flex flex-col bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors duration-300 rounded-3xl p-8 md:p-10">
+          <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest mb-8">
+            <iconify-icon icon="solar:code-square-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
+            <span>code</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
+            <a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener" data-track="code"
+              class="hover:text-[#F15A29] transition-colors">frontmatter matters</a>
+          </h3>
+          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-6">
+            Structural metadata for source files. Auto-generated sidecars via tree-sitter. LLMs know what a
+            file does without reading it.
+          </p>
+          <div class="flex items-center gap-2 text-[#F15A29] text-xs font-medium mb-8 flex-grow">
+            <iconify-icon icon="solar:chart-2-linear" stroke-width="1.5" class="text-base"></iconify-icon>
+            <span>80–90% fewer file reads</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 mb-8 mt-auto">
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Rust</span>
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">tree-sitter</span>
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">MCP</span>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#0a0a0a] border border-white/[0.05] rounded-xl p-4 font-mono text-xs text-zinc-400 group-hover:text-zinc-300 transition-colors">
+            <span>npm i frontmatter-matters</span>
+            <button class="text-zinc-500 hover:text-white cursor-pointer transition-colors flex items-center"
+              aria-label="Copy command">
+              <iconify-icon icon="solar:copy-linear" stroke-width="1.5" class="text-base"></iconify-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Documents -->
+        <div
+          class="group relative flex flex-col bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors duration-300 rounded-3xl p-8 md:p-10">
+          <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest mb-8">
+            <iconify-icon icon="solar:document-text-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
+            <span>documents</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
+            <a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener" data-track="documents"
+              class="hover:text-[#F15A29] transition-colors">mdcontext</a>
+          </h3>
+          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-6">
+            Structural intelligence for markdown. Hybrid search with BM25 and semantic embeddings.
+            Section-level indexing.
+          </p>
+          <div class="flex items-center gap-2 text-[#F15A29] text-xs font-medium mb-8 flex-grow">
+            <iconify-icon icon="solar:minimize-square-3-linear" stroke-width="1.5" class="text-base"></iconify-icon>
+            <span>80%+ token compression</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 mb-8 mt-auto">
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">TypeScript</span>
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Effect</span>
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">MCP</span>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#0a0a0a] border border-white/[0.05] rounded-xl p-4 font-mono text-xs text-zinc-400 group-hover:text-zinc-300 transition-colors">
+            <span>npm i mdcontext</span>
+            <button class="text-zinc-500 hover:text-white cursor-pointer transition-colors flex items-center"
+              aria-label="Copy command">
+              <iconify-icon icon="solar:copy-linear" stroke-width="1.5" class="text-base"></iconify-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: Orchestration -->
+        <div
+          class="group relative flex flex-col bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors duration-300 rounded-3xl p-8 md:p-10">
+          <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest mb-8">
+            <iconify-icon icon="solar:network-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
+            <span>orchestration</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
+            <a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener" data-track="orchestration"
+              class="hover:text-[#F15A29] transition-colors">nancyr</a>
+          </h3>
+          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-8 flex-grow">
+            Multi-agent orchestrator wrapping Claude Code CLI. Hub-and-spoke coordination with token
+            budgets. Compiles context. Learns from outcomes.
+          </p>
+          <div class="flex flex-wrap items-center gap-2 mt-auto">
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Rust</span>
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Claude
+              Code</span>
+            <span
+              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">TUI</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </main>
+
+  <!-- CTA -->
+  <section class="relative z-10 w-full max-w-6xl mx-auto mt-24 md:mt-32 flex flex-col items-center text-center gap-8">
+    <p class="text-sm md:text-base font-medium uppercase tracking-widest text-zinc-500">
+      all open source. all composable.
+    </p>
+    <a class="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors text-sm font-medium"
+      href="https://github.com/srobinson" target="_blank" rel="noopener" data-track="cta">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+        <path
+          d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+      </svg>
+      srobinson
+    </a>
+    <div
+      class="flex flex-col gap-2 bg-white/[0.02] border border-white/[0.05] rounded-2xl p-6 font-mono text-xs text-zinc-400 text-left w-full max-w-lg">
+      <div class="flex justify-between"><code>npx -y attention-matters serve</code><span class="text-zinc-600">#
+          memory</span></div>
+      <div class="flex justify-between"><code>npx -y frontmatter-matters serve</code><span class="text-zinc-600">#
+          code</span></div>
+      <div class="flex justify-between"><code>npx -y --package mdcontext mdcontext-mcp</code><span
+          class="text-zinc-600"># docs</span></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer
+    class="relative z-10 w-full max-w-6xl mx-auto mt-auto pt-8 border-t border-white/[0.05] flex items-center justify-between">
+    <span class="text-xs font-medium uppercase tracking-widest text-zinc-600">helioy</span>
+    <span class="text-xs text-zinc-600">2026</span>
+  </footer>
 
   <script type="module" src="/src/main.ts"></script>
 </body>

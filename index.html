@@ -1,321 +1,865 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>helioy. every token counts</title>
-  <meta name="description"
-    content="Infrastructure for AI agents that waste less and remember more. Geometric memory, code intelligence, document search. All as MCP servers." />
-  <meta property="og:title" content="helioy. every token counts" />
-  <meta property="og:description" content="Infrastructure for AI agents that waste less and remember more." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://helioy.com" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Martian+Mono:wght@100..800&display=swap"
-    rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .card-grid:hover .tool-card {
-      opacity: 0.9;
-      transition-duration: 30ms;
-    }
-
-    .card-grid .tool-card:hover {
-      opacity: 1;
-      transition-duration: 50ms;
-    }
-
-    .card-grid .tool-card:hover h3 a {
-      color: #F15A29;
-      transition-duration: 0ms;
-    }
-  </style>
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>helioy. every token counts</title>
+    <meta name="description"
+        content="Infrastructure for AI agents that waste less and remember more. Geometric memory, code intelligence, document search. All as MCP servers.">
+    <meta property="og:title" content="helioy. every token counts">
+    <meta property="og:description" content="Infrastructure for AI agents that waste less and remember more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://helioy.com">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <style>
+        h1[id],
+        h2[id],
+        h3[id] {
+            scroll-margin-top: 5rem;
+        }
+    </style>
 </head>
 
-<body
-  class="bg-[#0f0f0f] text-white min-h-screen flex flex-col relative overflow-x-hidden font-sans selection:bg-[#F15A29] selection:text-white p-6 md:p-12 lg:p-20 antialiased">
+<body class="bg-zinc-950 text-zinc-400 antialiased selection:bg-zinc-800 selection:text-zinc-200 relative min-h-screen"
+    style="font-family: 'Inter', sans-serif;">
 
-  <canvas id="s3" aria-hidden="true" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
-
-  <!-- Background Graphic -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <!-- Background Faded Logo -->
     <div
-      class="absolute top-0 right-0 text-9xl font-semibold text-white/[0.02] select-none scale-[4] md:scale-[6] lg:scale-[8] origin-top-right translate-x-16 translate-y-16">
-      H
-    </div>
-  </div>
-
-  <!-- Header / Logo -->
-  <header class="relative z-10 mb-20 md:mb-32 max-w-6xl mx-auto w-full">
-    <div class="flex items-center gap-1.5 select-none">
-      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
-        class="flex-shrink-0">
-        <ellipse cx="16" cy="16" rx="11" ry="11" stroke="#c9a227" stroke-width="1.5" fill="none" />
-        <ellipse cx="16" cy="16" rx="11" ry="4.5" stroke="#c9a227" stroke-width="1.5" fill="none" />
-        <ellipse cx="16" cy="16" rx="4.5" ry="11" stroke="#c9a227" stroke-width="1.5" fill="none" />
-        <circle cx="16" cy="16" r="2" fill="#c9a227" />
-      </svg>
-      <div class="text-xl md:text-2xl font-semibold tracking-tighter uppercase text-white mt-0.5">
-        HELIOY
-      </div>
-    </div>
-  </header>
-
-  <main class="relative z-10 flex-grow flex flex-col w-full max-w-6xl mx-auto">
-
-    <!-- Hero Section -->
-    <div class="flex flex-col max-w-4xl mb-16 md:mb-24">
-      <div class="flex items-center gap-2 text-[#F15A29] text-xs md:text-sm font-medium uppercase tracking-widest mb-8">
-        <iconify-icon icon="solar:cpu-linear" stroke-width="1.5"></iconify-icon>
-        <span>every token counts</span>
-      </div>
-
-      <h1 class="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1] mb-10">
-        Infrastructure for AI agents <br class="hidden lg:block">
-        <span class="text-zinc-500">that waste less and remember more.</span>
-      </h1>
-
-      <div class="flex flex-col gap-6 max-w-2xl">
-        <h2 class="text-xl md:text-2xl font-medium tracking-tight text-zinc-200">
-          Context windows are finite.
-        </h2>
-        <div class="flex flex-col gap-4 text-base md:text-lg text-zinc-400 leading-relaxed">
-          <p>
-            Most tokens are wasted on navigation. Reading files to find files,
-            scanning docs to find sections, re-learning what was known yesterday.
-          </p>
-          <p>
-            We build the tools to eliminate that waste.
-          </p>
-        </div>
-        <a href="https://github.com/srobinson" target="_blank" rel="noopener" data-track="cta-hero"
-          class="inline-flex items-center gap-2 text-sm font-medium text-[#F15A29] hover:text-white transition-colors w-fit">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
-            <path
-              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-          </svg>
-          View on GitHub
-        </a>
-      </div>
+        class="fixed inset-0 z-[-1] flex items-center justify-center pointer-events-none opacity-[0.02] overflow-hidden">
+        <svg class="w-[120vw] h-[120vw] max-w-none text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="50" cy="50" r="46"></circle>
+            <polygon points="50,15 85,50 50,85 15,50"></polygon>
+            <circle cx="50" cy="50" r="12"></circle>
+            <line x1="50" y1="4" x2="50" y2="15"></line>
+            <line x1="50" y1="96" x2="50" y2="85"></line>
+            <line x1="4" y1="50" x2="15" y2="50"></line>
+            <line x1="96" y1="50" x2="85" y2="50"></line>
+            <line x1="41.5" y1="41.5" x2="32.5" y2="32.5"></line>
+            <line x1="58.5" y1="41.5" x2="67.5" y2="32.5"></line>
+            <line x1="58.5" y1="58.5" x2="67.5" y2="67.5"></line>
+            <line x1="41.5" y1="58.5" x2="32.5" y2="67.5"></line>
+        </svg>
     </div>
 
-    <!-- The Stack Section -->
-    <div class="flex flex-col w-full mb-24">
-      <div class="flex flex-col gap-3 mb-12 md:mb-16">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-white">
-          the stack
-        </h2>
-        <p class="text-base md:text-lg text-zinc-500 font-medium">
-          Three problems. Three libraries. Two orchestrators.
-        </p>
-      </div>
-
-      <!-- Grid Layout -->
-      <div class="card-grid grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-
-        <!-- Card 1: Memory -->
-        <div
-          class="tool-card group/card relative flex flex-col bg-white/[0.03] border border-white/[0.06] rounded-3xl p-8 md:p-10 duration-30">
-          <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest mb-8">
-            <iconify-icon icon="solar:database-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
-            <span>memory</span>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
-            <a href="https://github.com/srobinson/attention-matters" target="_blank" rel="noopener" data-track="memory"
-              class="hover:text-[#F15A29] transition-colors">attention matters</a>
-          </h3>
-          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-8 flex-grow">
-            Geometric recall on the S³ hypersphere. Quaternion drift, phasor interference, Kuramoto
-            coupling. One brain per developer, not per project.
-          </p>
-          <div class="flex flex-wrap items-center gap-2 mb-8 mt-auto">
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Rust</span>
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">MCP</span>
-          </div>
-          <div
-            class="flex items-center justify-between bg-[#0a0a0a] border border-white/[0.05] rounded-xl p-4 font-mono text-xs text-zinc-400 group-hover/card:text-zinc-300 transition-colors">
-            <span>npm i attention-matters</span>
-            <button class="text-zinc-500 hover:text-white cursor-pointer transition-colors flex items-center"
-              aria-label="Copy command">
-              <iconify-icon icon="solar:copy-linear" stroke-width="1.5" class="text-base"></iconify-icon>
-            </button>
-          </div>
+    <!-- Top Navigation -->
+    <nav
+        class="fixed inset-x-0 top-0 h-14 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md flex items-center px-6 z-50 justify-between">
+        <div class="flex items-center gap-2.5 text-zinc-100">
+            <!-- Custom Geometric Logo -->
+            <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="50" cy="50" r="46"></circle>
+                <polygon points="50,15 85,50 50,85 15,50"></polygon>
+                <circle cx="50" cy="50" r="12"></circle>
+                <line x1="50" y1="4" x2="50" y2="15"></line>
+                <line x1="50" y1="96" x2="50" y2="85"></line>
+                <line x1="4" y1="50" x2="15" y2="50"></line>
+                <line x1="96" y1="50" x2="85" y2="50"></line>
+                <line x1="41.5" y1="41.5" x2="32.5" y2="32.5"></line>
+                <line x1="58.5" y1="41.5" x2="67.5" y2="32.5"></line>
+                <line x1="58.5" y1="58.5" x2="67.5" y2="67.5"></line>
+                <line x1="41.5" y1="58.5" x2="32.5" y2="67.5"></line>
+            </svg>
+            <span class="tracking-tight font-normal text-base">helioy</span>
         </div>
-
-        <!-- Card 2: Code -->
-        <div
-          class="tool-card group/card relative flex flex-col bg-white/[0.03] border border-white/[0.06] rounded-3xl p-8 md:p-10 duration-30">
-          <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest mb-8">
-            <iconify-icon icon="solar:code-square-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
-            <span>code</span>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
-            <a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener" data-track="code"
-              class="hover:text-[#F15A29] transition-colors">frontmatter matters</a>
-          </h3>
-          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-6">
-            Structural metadata for source files. Auto-generated sidecars via tree-sitter. LLMs know what a
-            file does without reading it.
-          </p>
-          <div class="flex items-center gap-2 text-[#F15A29] text-xs font-medium mb-8 flex-grow">
-            <iconify-icon icon="solar:chart-2-linear" stroke-width="1.5" class="text-base"></iconify-icon>
-            <span>80–90% fewer file reads</span>
-          </div>
-          <div class="flex flex-wrap items-center gap-2 mb-8 mt-auto">
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Rust</span>
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">tree-sitter</span>
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">MCP</span>
-          </div>
-          <div
-            class="flex items-center justify-between bg-[#0a0a0a] border border-white/[0.05] rounded-xl p-4 font-mono text-xs text-zinc-400 group-hover/card:text-zinc-300 transition-colors">
-            <span>npm i frontmatter-matters</span>
-            <button class="text-zinc-500 hover:text-white cursor-pointer transition-colors flex items-center"
-              aria-label="Copy command">
-              <iconify-icon icon="solar:copy-linear" stroke-width="1.5" class="text-base"></iconify-icon>
-            </button>
-          </div>
+        <div class="flex items-center gap-4 text-sm font-normal tracking-tight text-zinc-500">
+            <a href="#manifesto" class="hover:text-zinc-300 transition-colors">Manifesto</a>
+            <a href="#am" class="hover:text-zinc-300 transition-colors">AM</a>
+            <a href="#fmm" class="hover:text-zinc-300 transition-colors">fmm</a>
+            <a href="#mdcontext" class="hover:text-zinc-300 transition-colors">mdcontext</a>
+            <a href="#nancyr" class="hover:text-zinc-300 transition-colors">Nancyr</a>
+            <div class="h-4 w-px bg-white/10 mx-2"></div>
+            <a href="https://github.com/srobinson" target="_blank" rel="noopener"
+                class="flex items-center gap-1.5 hover:text-zinc-300 transition-colors">
+                <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
         </div>
+    </nav>
 
-        <!-- Card 3: Documents -->
-        <div
-          class="tool-card group/card relative flex flex-col bg-white/[0.03] border border-white/[0.06] rounded-3xl p-8 md:p-10 duration-30">
-          <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest mb-8">
-            <iconify-icon icon="solar:document-text-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
-            <span>documents</span>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
-            <a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener" data-track="documents"
-              class="hover:text-[#F15A29] transition-colors">mdcontext</a>
-          </h3>
-          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-6">
-            Structural intelligence for markdown. Hybrid search with BM25 and semantic embeddings.
-            Section-level indexing.
-          </p>
-          <div class="flex items-center gap-2 text-[#F15A29] text-xs font-medium mb-8 flex-grow">
-            <iconify-icon icon="solar:minimize-square-3-linear" stroke-width="1.5" class="text-base"></iconify-icon>
-            <span>80%+ token compression</span>
-          </div>
-          <div class="flex flex-wrap items-center gap-2 mb-8 mt-auto">
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">TypeScript</span>
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Effect</span>
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">MCP</span>
-          </div>
-          <div
-            class="flex items-center justify-between bg-[#0a0a0a] border border-white/[0.05] rounded-xl p-4 font-mono text-xs text-zinc-400 group-hover/card:text-zinc-300 transition-colors">
-            <span>npm i mdcontext</span>
-            <button class="text-zinc-500 hover:text-white cursor-pointer transition-colors flex items-center"
-              aria-label="Copy command">
-              <iconify-icon icon="solar:copy-linear" stroke-width="1.5" class="text-base"></iconify-icon>
-            </button>
-          </div>
-        </div>
-
-        <!-- Card 4: Orchestration (MVP) -->
-        <div
-          class="tool-card group/card relative flex flex-col bg-white/[0.03] border border-white/[0.06] rounded-3xl p-8 md:p-10 duration-30">
-          <div class="flex items-center justify-between mb-8">
-            <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest">
-              <iconify-icon icon="solar:network-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
-              <span>orchestration</span>
+    <div class="pt-14 flex max-w-[90rem] mx-auto min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="hidden lg:flex flex-col w-64 shrink-0 border-r border-white/5 h-[calc(100vh-3.5rem)] sticky top-14 py-8 pr-6 pl-4 overflow-y-auto">
+            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">Overview</h4>
+            <div class="flex flex-col gap-1 mb-8">
+                <a href="#manifesto" class="text-base px-3 py-1.5 rounded-lg bg-white/5 text-zinc-200 font-normal">The
+                    Manifesto</a>
+                <a href="#thesis"
+                    class="text-base px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">Product
+                    Thesis</a>
+                <a href="#tenets"
+                    class="text-base px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">Core
+                    Tenets</a>
             </div>
-            <span
-              class="text-[10px] font-semibold uppercase tracking-widest text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-2.5 py-1 rounded-full">MVP</span>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
-            <a href="https://github.com/srobinson/nancy" target="_blank" rel="noopener" data-track="orchestration-mvp"
-              class="hover:text-[#F15A29] transition-colors">nancy</a>
-          </h3>
-          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-8 flex-grow">
-            Multi-agent orchestrator wrapping Claude Code CLI. Hub-and-spoke coordination with token
-            budgets. Compiles context. Learns from outcomes.
-          </p>
-          <div class="flex flex-wrap items-center gap-2 mt-auto">
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Bash</span>
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Claude
-              Code</span>
-          </div>
-        </div>
 
-        <!-- Card 5: Orchestration (WIP) -->
-        <div
-          class="tool-card group/card relative flex flex-col bg-white/[0.03] border border-white/[0.06] rounded-3xl p-8 md:p-10 duration-30">
-          <div class="flex items-center justify-between mb-8">
-            <div class="flex items-center gap-2 text-zinc-500 text-xs font-medium uppercase tracking-widest">
-              <iconify-icon icon="solar:network-linear" stroke-width="1.5" class="text-lg"></iconify-icon>
-              <span>orchestration</span>
+            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">Core Stack</h4>
+            <div class="flex flex-col gap-1 mb-8">
+                <a href="#am"
+                    class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
+                    <i data-lucide="brain" class="w-4 h-4"></i> am
+                </a>
+                <a href="#fmm"
+                    class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> fmm
+                </a>
+                <a href="#mdcontext"
+                    class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
+                    <i data-lucide="file-text" class="w-4 h-4"></i> mdcontext
+                </a>
+                <a href="#nancyr"
+                    class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
+                    <i data-lucide="route" class="w-4 h-4"></i> nancyr
+                </a>
             </div>
-            <span
-              class="text-[10px] font-semibold uppercase tracking-widest text-amber-400 bg-amber-400/10 border border-amber-400/20 px-2.5 py-1 rounded-full">WIP</span>
-          </div>
-          <h3 class="text-2xl md:text-3xl font-medium tracking-tight text-zinc-100 mb-4">
-            <a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener" data-track="orchestration-wip"
-              class="hover:text-[#F15A29] transition-colors">nancyr</a>
-          </h3>
-          <p class="text-sm md:text-base text-zinc-400 leading-relaxed mb-8 flex-grow">
-            Rust rewrite of nancy. Native TUI, persistent state, structured token budgets.
-          </p>
-          <div class="flex flex-wrap items-center gap-2 mt-auto">
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Rust</span>
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">Claude
-              Code</span>
-            <span
-              class="text-xs font-medium text-zinc-400 bg-white/[0.03] border border-white/[0.05] px-3 py-1.5 rounded-full">TUI</span>
-          </div>
-        </div>
 
-      </div>
+            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">Concepts</h4>
+            <div class="flex flex-col gap-1">
+                <a href="#tactical-vs-reflective"
+                    class="text-base px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">Tactical
+                    vs Reflective</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 min-w-0 py-12 px-6 sm:px-12 lg:px-20 max-w-4xl relative z-10">
+
+            <!-- Context Manifesto -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div
+                        class="inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 px-3 py-1 text-sm font-normal text-zinc-300 mb-6">
+                        <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i> Vision
+                    </div>
+                    <h1 id="manifesto" class="text-4xl md:text-5xl tracking-tight font-normal text-zinc-100 mb-6 leading-tight">
+                        Helioy Context Manifesto
+                    </h1>
+                    <p class="text-xl md:text-2xl text-zinc-400 font-light leading-relaxed tracking-tight">
+                        LLMs do not primarily suffer from a lack of intelligence. They suffer from a lack of usable
+                        context.
+                    </p>
+                </header>
+
+                <div class="prose prose-invert max-w-none">
+                    <p class="text-lg leading-relaxed mb-6 text-zinc-400">
+                        Raw environments are too large, too noisy, too expensive, and too undifferentiated to be the
+                        primary substrate for finite-context intelligence.
+                    </p>
+                    <ul class="flex flex-col gap-4 mb-10">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-zinc-600 shrink-0 mt-0.5"></i>
+                            <span class="text-base text-zinc-300">Codebases are too big to read linearly.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-zinc-600 shrink-0 mt-0.5"></i>
+                            <span class="text-base text-zinc-300">Documentation is too verbose to paste
+                                wholesale.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-zinc-600 shrink-0 mt-0.5"></i>
+                            <span class="text-base text-zinc-300">Conversation history is too messy to trust as future
+                                memory.</span>
+                        </li>
+                    </ul>
+
+                    <h2 id="thesis" class="text-2xl md:text-3xl tracking-tight font-normal text-zinc-100 mb-6 mt-16">
+                        Product Thesis
+                    </h2>
+                    <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5 mb-14">
+                        <p class="text-lg text-zinc-300 font-normal leading-relaxed">
+                            Helioy exists to turn raw environments into high-signal context for finite-context
+                            intelligence. Not search for its own sake. Not memory for its own sake. Not orchestration
+                            for its own sake. <strong class="text-zinc-100 font-medium">Context.</strong> Useful,
+                            compressed, structured, trustworthy context.
+                        </p>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl tracking-tight font-normal text-zinc-100 mb-6 mt-16"
+                        id="product-group">The Product Group</h2>
+                    <p class="text-lg text-zinc-400 leading-relaxed mb-8">
+                        These are not separate ideas. They are different answers to the same problem.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+                        <!-- fmm card -->
+                        <div
+                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+                            <div
+                                class="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-white/20 transition-colors">
+                                <i data-lucide="folder-open" class="w-5 h-5 text-zinc-300"></i>
+                            </div>
+                            <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-2">
+                                <a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener"
+                                    class="hover:text-white transition-colors">fmm</a>
+                            </h3>
+                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
+                                Solves code context. Compiles code into structural metadata so models don't rediscover
+                                structure from scratch.
+                            </p>
+                            <div
+                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
+                                What does the codebase structurally contain?
+                            </div>
+                        </div>
+
+                        <!-- mdcontext card -->
+                        <div
+                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+                            <div
+                                class="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-white/20 transition-colors">
+                                <i data-lucide="file-text" class="w-5 h-5 text-zinc-300"></i>
+                            </div>
+                            <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-2">
+                                <a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener"
+                                    class="hover:text-white transition-colors">mdcontext</a>
+                            </h3>
+                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
+                                Solves document context. Compiles documents into indexed sections, ranked results, and
+                                token-bounded context.
+                            </p>
+                            <div
+                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
+                                What do docs mean within a finite budget?
+                            </div>
+                        </div>
+
+                        <!-- AM card -->
+                        <div
+                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+                            <div
+                                class="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-white/20 transition-colors">
+                                <i data-lucide="brain" class="w-5 h-5 text-zinc-300"></i>
+                            </div>
+                            <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-2">
+                                <a href="https://github.com/srobinson/attention-matters" target="_blank" rel="noopener"
+                                    class="hover:text-white transition-colors">AM</a>
+                            </h3>
+                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
+                                Solves reflective memory. Forms memory through conversation to track what becomes true
+                                through repeated dialogue.
+                            </p>
+                            <div
+                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
+                                What is becoming true over time?
+                            </div>
+                        </div>
+
+                        <!-- nancyr card -->
+                        <div
+                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+                            <div
+                                class="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-white/20 transition-colors">
+                                <i data-lucide="route" class="w-5 h-5 text-zinc-300"></i>
+                            </div>
+                            <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-2">
+                                <a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener"
+                                    class="hover:text-white transition-colors">nancyr</a>
+                            </h3>
+                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
+                                The orchestration harness. Decides how context moves, what passes to which agent, and
+                                coordinates action.
+                            </p>
+                            <div
+                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
+                                How does context become coordinated action?
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl tracking-tight font-normal text-zinc-100 mb-8 mt-16" id="tenets">The
+                        Three Tenets</h2>
+                    <div class="space-y-5 mb-16">
+                        <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                            <div
+                                class="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 font-mono text-sm shrink-0">
+                                01</div>
+                            <div>
+                                <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Context is Finite
+                                </h4>
+                                <p class="text-base text-zinc-500 leading-relaxed">Tokens are a strict budget. Every
+                                    token spent on boilerplate or irrelevant context is a token stolen from reasoning
+                                    depth. Compression is not optional.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                            <div
+                                class="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 font-mono text-sm shrink-0">
+                                02</div>
+                            <div>
+                                <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Structure Beats
+                                    Search</h4>
+                                <p class="text-base text-zinc-500 leading-relaxed">Raw text search is lazy. Intelligence
+                                    requires graphs, hierarchies, and typed references. If a model has to deduce the
+                                    structure of a codebase, the context engine has failed.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5">
+                            <div
+                                class="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 font-mono text-sm shrink-0">
+                                03</div>
+                            <div>
+                                <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Memory Must Compound
+                                </h4>
+                                <p class="text-base text-zinc-500 leading-relaxed">A conversation history is a
+                                    transcript, not a memory. True memory is distilled, synthesized, and structurally
+                                    updated to make future interactions more efficient.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl tracking-tight font-normal text-zinc-100 mb-6 mt-16"
+                        id="tactical-vs-reflective">Tactical Context vs Reflective Memory</h2>
+                    <p class="text-lg text-zinc-400 leading-relaxed mb-10">This distinction matters. The systems operate
+                        on different optimization targets.</p>
+
+                    <div class="flex flex-col lg:flex-row gap-6 mb-16">
+                        <div class="flex-1 bg-zinc-900/50 border border-white/5 rounded-2xl overflow-hidden">
+                            <div class="p-5 border-b border-white/5 bg-white/[0.02]">
+                                <h4 class="text-base font-normal tracking-tight text-zinc-100">Tactical Context</h4>
+                                <p class="text-sm text-zinc-500 mt-1">fmm, mdcontext</p>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm text-zinc-400 mb-4 uppercase tracking-[0.15em] font-normal">Optimized
+                                    for</p>
+                                <ul class="text-base text-zinc-300 flex flex-col gap-3 mb-8">
+                                    <li class="flex items-center gap-3">
+                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Precision
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Compression
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Determinism
+                                    </li>
+                                </ul>
+                                <p class="text-sm text-zinc-400 mb-4 uppercase tracking-[0.15em] font-normal">Used for
+                                </p>
+                                <p class="text-base text-zinc-500 leading-relaxed">Code navigation, document lookup,
+                                    implementation decisions, immediate execution.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 bg-zinc-900/50 border border-white/5 rounded-2xl overflow-hidden">
+                            <div class="p-5 border-b border-white/5 bg-white/[0.02]">
+                                <h4 class="text-base font-normal tracking-tight text-zinc-100">Reflective Memory</h4>
+                                <p class="text-sm text-zinc-500 mt-1">AM</p>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm text-zinc-400 mb-4 uppercase tracking-[0.15em] font-normal">Optimized
+                                    for</p>
+                                <ul class="text-base text-zinc-300 flex flex-col gap-3 mb-8">
+                                    <li class="flex items-center gap-3">
+                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Salience &amp;
+                                        Synthesis
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Continuity
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Debate &amp;
+                                        Interpretation
+                                    </li>
+                                </ul>
+                                <p class="text-sm text-zinc-400 mb-4 uppercase tracking-[0.15em] font-normal">Used for
+                                </p>
+                                <p class="text-base text-zinc-500 leading-relaxed">Organizational identity, strategic
+                                    continuity, durable beliefs, long-horizon meaning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px w-full bg-white/5 my-20"></div>
+
+            <!-- attention-matters -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div class="flex items-center gap-4 mb-5">
+                        <i data-lucide="brain" class="w-8 h-8 text-zinc-500"></i>
+                        <h2 id="am" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
+                            <a href="https://github.com/srobinson/attention-matters" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">am: Attention Matters</a>
+                        </h2>
+                    </div>
+                    <p class="text-lg text-zinc-400 leading-relaxed">
+                        A geometric memory engine built on the S³ hypersphere. Memories aren't retrieved, they're
+                        surfaced through quaternion drift, phasor interference, and Kuramoto phase coupling across dual
+                        manifolds.
+                    </p>
+                </header>
+
+                <div
+                    class="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 overflow-x-auto mb-12 font-mono text-sm text-zinc-400 leading-relaxed">
+                    <pre><code>Query: "quaternion drift"
+    │
+    ▼
+┌─ activate ──── drift ──── interfere ──── couple ──── surface ──── compose ─-┐
+│                                                                             │
+│  Words activate      Occurrences    Conscious &amp;     Phases         Score,   │
+│  on the manifold     SLERP toward   subconscious    synchronize    rank,    │
+│  with IDF weights    each other     phasors         via Kuramoto   return   │
+└─────────────────────────────────────────────────────────────────────────────┘</code></pre>
+                </div>
+
+                <div class="space-y-10">
+                    <div>
+                        <h3 id="geometry" class="text-base font-normal text-zinc-100 tracking-tight mb-4">Geometric Memory</h3>
+                        <p class="text-base text-zinc-400 mb-6">All constants derive from φ (golden ratio) and π.</p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div
+                                class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i data-lucide="globe" class="w-6 h-6 text-zinc-400 shrink-0"></i>
+                                    <h4 class="text-base font-normal text-zinc-100 tracking-tight">Quaternion positions
+                                    </h4>
+                                </div>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Each word instance lives on S³. SLERP
+                                    interpolation along geodesics creates continuous movement.</p>
+                            </div>
+                            <div
+                                class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i data-lucide="magnet" class="w-6 h-6 text-zinc-400 shrink-0"></i>
+                                    <h4 class="text-base font-normal text-zinc-100 tracking-tight">IDF-weighted drift
+                                    </h4>
+                                </div>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Query activation pulls related
+                                    occurrences closer. The manifold actively reshapes with every query.</p>
+                            </div>
+                            <div
+                                class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i data-lucide="aperture" class="w-6 h-6 text-zinc-400 shrink-0"></i>
+                                    <h4 class="text-base font-normal text-zinc-100 tracking-tight">Golden-angle phasors
+                                    </h4>
+                                </div>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Phase distribution naturally follows
+                                    phyllotaxis (2π/φ²) for maximal harmonic separation.</p>
+                            </div>
+                            <div
+                                class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <i data-lucide="users" class="w-6 h-6 text-zinc-400 shrink-0"></i>
+                                    <h4 class="text-base font-normal text-zinc-100 tracking-tight">Kuramoto coupling
+                                    </h4>
+                                </div>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Phases synchronize dynamically between
+                                    co-activated neighborhoods, modulated by network plasticity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">Installation</h3>
+                        <div class="bg-black/50 border border-white/10 rounded-xl p-5 font-mono text-sm text-zinc-300">
+                            <div class="text-zinc-600 mb-1.5"># CLI</div>
+                            <div>npx -y attention-matters</div>
+                            <div class="text-zinc-600 mt-4 mb-1.5"># MCP server</div>
+                            <div>npx -y attention-matters serve</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px w-full bg-white/5 my-20"></div>
+
+            <!-- fmm -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div class="flex items-center gap-4 mb-5">
+                        <i data-lucide="folder-open" class="w-8 h-8 text-zinc-500"></i>
+                        <h2 id="fmm" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
+                            <a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">fmm: Frontmatter Matters</a>
+                        </h2>
+                    </div>
+                    <p class="text-lg text-zinc-400 leading-relaxed mb-8">
+                        Structural intelligence for codebases. The main value is faster orientation. fmm maintains a
+                        single SQLite database at the project root indexing exports, imports, dependencies, line
+                        counts, and file outlines.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+                        <div class="bg-zinc-950 p-6">
+                            <p class="text-sm text-zinc-500 uppercase tracking-widest mb-4">Without fmm</p>
+                            <p class="text-base text-zinc-300 mb-2">Orient with grep, listings, and selective file reads</p>
+                            <p class="text-base text-zinc-500">Structure is reconstructed from scattered results</p>
+                        </div>
+                        <div class="bg-zinc-950 p-6 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-white/[0.02]"></div>
+                            <p class="text-sm text-zinc-500 uppercase tracking-widest mb-4 relative z-10">With fmm</p>
+                            <p class="text-base text-zinc-100 mb-2 relative z-10">Query structure first, then open needed files
+                            </p>
+                            <p class="text-base text-zinc-300 relative z-10">See directory shape, key files, and dependency
+                                impact up front</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">MCP Tools</h3>
+                        <div class="border border-white/5 rounded-2xl overflow-hidden text-base">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-white/[0.02] border-b border-white/5">
+                                        <th class="py-4 px-5 font-normal text-zinc-300 w-1/3">Tool</th>
+                                        <th class="py-4 px-5 font-normal text-zinc-300">Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-white/5">
+                                    <tr>
+                                        <td class="py-4 px-5 text-zinc-400 font-mono text-sm">fmm_lookup_export</td>
+                                        <td class="py-4 px-5 text-zinc-500">Find which file defines a symbol — O(1)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4 px-5 text-zinc-400 font-mono text-sm">fmm_read_symbol</td>
+                                        <td class="py-4 px-5 text-zinc-500">Extract exact source following re-export
+                                            chains</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4 px-5 text-zinc-400 font-mono text-sm">fmm_dependency_graph</td>
+                                        <td class="py-4 px-5 text-zinc-500">Intra-project deps, external packages, and
+                                            downstream blast radius</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4 px-5 text-zinc-400 font-mono text-sm">fmm_file_outline</td>
+                                        <td class="py-4 px-5 text-zinc-500">Table of contents with line ranges</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 overflow-x-auto mb-12 font-mono text-sm text-zinc-500 leading-relaxed">
+                        <pre><code>                        ┌──────────────────────────────────────────────────────┐
+                        │                     fmm pipeline                     │
+                        │                                                      │
+  Source Files          │   ┌───────────┐    ┌───────────┐    ┌────────────┐   │    LLM / MCP Client
+  ─────────────────────►│   │  Parser   │───►│ Extractor │───►│  SQLite    │   │◄──────────────────
+  .ts .py .rs .go .c    │   │(tree-sit) │    │           │    │  Writer    │   │   fmm_lookup_export
+  .java .cpp .cs .rb    │   └───────────┘    └───────────┘    └─────┬──────┘   │   fmm_read_symbol
+                        │                                     ┌─────▼──────┐   │   fmm_dependency_graph
+                        │                                     │  .fmm.db   │   │   fmm_file_outline
+                        │                                     └────────────┘   │
+                        └──────────────────────────────────────────────────────┘</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px w-full bg-white/5 my-20"></div>
+
+            <!-- mdcontext -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div class="flex items-center gap-4 mb-5">
+                        <i data-lucide="file-text" class="w-8 h-8 text-zinc-500"></i>
+                        <h2 id="mdcontext" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
+                            <a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">mdcontext</a>
+                        </h2>
+                    </div>
+                    <p class="text-lg text-zinc-400 leading-relaxed mb-8">
+                        Documentation is traditionally consumed linearly. For finite-context intelligence, it must be
+                        consumed hierarchically and budget-consciously. mdcontext is an AST-aware semantic chunker and
+                        token-bounded retrieval engine.
+                    </p>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="scissors" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">AST-Aware Chunking</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Breaks markdown at logical header boundaries,
+                            preserving parent-child semantic relationships rather than arbitrary character limits.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="hourglass" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Token Bounding</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Retrieval strictly respects context window
+                            budgets. If a requested section is too large, it automatically summarizes or intelligently
+                            truncates.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="navigation" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Semantic Routing</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Maps user queries to the most relevant document
+                            nodes using fast, local embeddings before any full LLM synthesis happens.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">MCP Tools</h3>
+                    <div class="border border-white/5 rounded-2xl overflow-hidden text-base">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-white/[0.02] border-b border-white/5">
+                                    <th class="py-4 px-5 font-normal text-zinc-300 w-1/3">Tool</th>
+                                    <th class="py-4 px-5 font-normal text-zinc-300">Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                                <tr>
+                                    <td class="py-4 px-5 text-zinc-400 font-mono text-sm">md_search</td>
+                                    <td class="py-4 px-5 text-zinc-500">Semantic search across all indexed documentation
+                                        nodes</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-5 text-zinc-400 font-mono text-sm">md_read_section</td>
+                                    <td class="py-4 px-5 text-zinc-500">Retrieve a specific document section cleanly by
+                                        its AST heading path</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 px-5 text-zinc-400 font-mono text-sm">md_tree</td>
+                                    <td class="py-4 px-5 text-zinc-500">Get the hierarchical structural outline of a
+                                        document for fast navigation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px w-full bg-white/5 my-20"></div>
+
+            <!-- Nancyr V2 -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div class="flex items-center gap-4 mb-5">
+                        <i data-lucide="route" class="w-8 h-8 text-zinc-500"></i>
+                        <h2 id="nancyr" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
+                            <a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">Nancy V2</a>
+                        </h2>
+                    </div>
+                    <p class="text-lg text-zinc-400 leading-relaxed mb-8">
+                        A self-improving runtime for collaborative intelligence. It coordinates specialized agents,
+                        routes context, preserves coherence under pressure, and improves teamwork over time.
+                    </p>
+                </header>
+
+                <div class="space-y-10">
+                    <div class="p-7 border border-white/5 bg-white/[0.02] rounded-2xl">
+                        <h3 class="text-base font-normal tracking-tight text-zinc-100 mb-4">Where This Started</h3>
+                        <p class="text-base text-zinc-400 leading-relaxed">
+                            Before <code>nancyr</code>, there was
+                            <a href="https://github.com/srobinson/nancy" target="_blank" rel="noopener"
+                                class="text-zinc-200 hover:text-white transition-colors">nancy</a>:
+                            an autonomous task execution loop with context awareness and token management. The current
+                            runtime grows out of that earlier experiment in iterative agent work.
+                        </p>
+                    </div>
+
+                    <div class="p-7 border border-white/5 bg-white/[0.02] rounded-2xl">
+                        <h3 class="text-base font-normal tracking-tight text-zinc-100 mb-4">The Optimization Target</h3>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-6">
+                            The deeper optimization target is <strong class="text-zinc-200 font-normal">quality of
+                                collaboration</strong>. `nancyr` should optimize how intelligence is organized, not just
+                            how prompts are written.
+                        </p>
+                        <ul class="text-base text-zinc-500 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle"
+                                    class="w-4 h-4 text-zinc-400"></i> Division of labor</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle"
+                                    class="w-4 h-4 text-zinc-400"></i> Timing of intervention</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle"
+                                    class="w-4 h-4 text-zinc-400"></i> Precision of handoffs</li>
+                            <li class="flex items-center gap-3"><i data-lucide="check-circle"
+                                    class="w-4 h-4 text-zinc-400"></i> Correctness of escalation</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-normal tracking-tight text-zinc-100 mb-6" id="four-loops">The Four
+                            Learning Loops</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                            <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                                <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">1. Task
+                                    Loop</div>
+                                <p class="text-base text-zinc-300 mb-4">Did the team complete the task well?</p>
+                                <p class="text-sm text-zinc-500">Signals: correctness, speed, rework, regressions</p>
+                            </div>
+
+                            <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                                <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">2.
+                                    Coordination Loop</div>
+                                <p class="text-base text-zinc-300 mb-4">Was the work split correctly?</p>
+                                <p class="text-sm text-zinc-500">Signals: duplicate effort, poor sequencing, blocked
+                                    deps</p>
+                            </div>
+
+                            <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                                <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">3.
+                                    Protocol Loop</div>
+                                <p class="text-base text-zinc-300 mb-4">Did the protocol help or hinder?</p>
+                                <p class="text-sm text-zinc-500">Signals: bus message quality, escalation policy clarity
+                                </p>
+                            </div>
+
+                            <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                                <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">4.
+                                    Identity Loop</div>
+                                <p class="text-base text-zinc-300 mb-4">Are the roles themselves right?</p>
+                                <p class="text-sm text-zinc-500">Signals: recurring confusion, missing specialist roles
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="pt-10 mt-14 border-t border-white/5">
+                        <h3 class="text-xl font-normal tracking-tight text-zinc-100 mb-5">Final Thesis</h3>
+                        <p class="text-lg text-zinc-400 leading-relaxed pl-5 border-l-2 border-zinc-700 italic">
+                            `nancyr` should become a self-improving runtime for collaborative intelligence, where
+                            specialized agents, structured context, reflective memory, and explicit coordination
+                            protocols combine into compounding execution quality over time.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
-  </main>
 
-  <!-- CTA -->
-  <section class="relative z-10 w-full max-w-6xl mx-auto mt-24 md:mt-32 flex flex-col items-center text-center gap-8">
-    <p class="text-sm md:text-base font-medium uppercase tracking-widest text-zinc-500">
-      all open source. all composable.
-    </p>
-    <a class="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors text-sm font-medium"
-      href="https://github.com/srobinson" target="_blank" rel="noopener" data-track="cta">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
-        <path
-          d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-      </svg>
-      srobinson
-    </a>
-    <div
-      class="flex flex-col gap-2 bg-white/[0.02] border border-white/[0.05] rounded-2xl p-6 font-mono text-xs text-zinc-400 text-left w-full max-w-lg">
-      <div class="flex justify-between"><code>npx -y attention-matters serve</code><span class="text-zinc-600">#
-          memory</span></div>
-      <div class="flex justify-between"><code>npx -y frontmatter-matters serve</code><span class="text-zinc-600">#
-          code</span></div>
-      <div class="flex justify-between"><code>npx -y --package mdcontext mdcontext-mcp</code><span
-          class="text-zinc-600"># docs</span></div>
-    </div>
-  </section>
+    <script>
+        lucide.createIcons({
+            attrs: {
+                'stroke-width': 1.5
+            }
+        });
 
-  <!-- Footer -->
-  <footer
-    class="relative z-10 w-full max-w-6xl mx-auto mt-auto pt-8 border-t border-white/[0.05] flex items-center justify-between">
-    <span class="text-xs font-medium uppercase tracking-widest text-zinc-600">helioy</span>
-    <span class="text-xs text-zinc-600">2026</span>
-  </footer>
+        const topNavLinks = [...document.querySelectorAll('nav a[href^="#"]')];
+        const sidebarLinks = [...document.querySelectorAll('aside a[href^="#"]')];
+        const internalNavLinks = [...new Set([...topNavLinks, ...sidebarLinks])];
 
-  <script type="module" src="/src/main.ts"></script>
+        function sortByDocumentOrder(left, right) {
+            if (left === right) {
+                return 0;
+            }
+
+            return left.compareDocumentPosition(right) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+        }
+
+        function buildEntries(links) {
+            const seen = new Set();
+
+            return links
+                .map((link) => {
+                    const hash = link.getAttribute('href');
+
+                    return {
+                        hash,
+                        element: hash ? document.querySelector(hash) : null
+                    };
+                })
+                .filter(({ hash, element }) => {
+                    if (!hash || !element || seen.has(hash)) {
+                        return false;
+                    }
+
+                    seen.add(hash);
+                    return true;
+                })
+                .sort((left, right) => sortByDocumentOrder(left.element, right.element));
+        }
+
+        const topNavEntries = buildEntries(topNavLinks);
+        const sidebarEntries = buildEntries(sidebarLinks);
+
+        function updateLinkState(link, isActive) {
+            const inSidebar = Boolean(link.closest('aside'));
+            const activeClasses = inSidebar ? ['bg-white/5', 'text-zinc-200'] : ['text-zinc-200'];
+            const inactiveClasses = inSidebar
+                ? ['text-zinc-500', 'hover:text-zinc-300', 'hover:bg-white/5']
+                : ['text-zinc-500', 'hover:text-zinc-300'];
+
+            if (isActive) {
+                link.classList.add(...activeClasses);
+                link.classList.remove(...inactiveClasses);
+                link.setAttribute('aria-current', 'location');
+                return;
+            }
+
+            link.classList.remove(...activeClasses);
+            link.classList.add(...inactiveClasses);
+            link.removeAttribute('aria-current');
+        }
+
+        function getActiveHash(entries) {
+            if (!entries.length) {
+                return '';
+            }
+
+            const navHeight = document.querySelector('nav')?.offsetHeight ?? 56;
+            const activationOffset = navHeight + 24;
+            let activeHash = entries[0].hash;
+
+            for (const entry of entries) {
+                if (entry.element.getBoundingClientRect().top <= activationOffset) {
+                    activeHash = entry.hash;
+                } else {
+                    break;
+                }
+            }
+
+            return activeHash;
+        }
+
+        function syncActiveNav() {
+            const activeTopHash = getActiveHash(topNavEntries);
+            const activeSidebarHash = getActiveHash(sidebarEntries);
+
+            topNavLinks.forEach((link) => {
+                updateLinkState(link, link.getAttribute('href') === activeTopHash);
+            });
+
+            sidebarLinks.forEach((link) => {
+                updateLinkState(link, link.getAttribute('href') === activeSidebarHash);
+            });
+        }
+
+        let ticking = false;
+
+        function requestNavSync() {
+            if (ticking) {
+                return;
+            }
+
+            ticking = true;
+            window.requestAnimationFrame(() => {
+                syncActiveNav();
+                ticking = false;
+            });
+        }
+
+        window.addEventListener('scroll', requestNavSync, { passive: true });
+        window.addEventListener('resize', requestNavSync);
+        window.addEventListener('hashchange', requestNavSync);
+        window.addEventListener('load', requestNavSync);
+        internalNavLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                window.setTimeout(() => {
+                    link.blur();
+                    requestNavSync();
+                }, 0);
+            });
+        });
+        requestNavSync();
+    </script>
+
 </body>
 
 </html>

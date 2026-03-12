@@ -69,12 +69,13 @@
             </svg>
             <span class="tracking-tight font-normal text-base">helioy</span>
         </div>
-        <div class="flex min-w-0 flex-1 items-center gap-4 overflow-x-auto whitespace-nowrap pl-3 text-sm font-normal tracking-tight text-zinc-500 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div
+            class="flex min-w-0 flex-1 items-center gap-3 overflow-x-auto whitespace-nowrap pl-3 text-sm font-normal tracking-tight text-zinc-500 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <a href="#manifesto" class="hover:text-zinc-300 transition-colors">Manifesto</a>
             <a href="#am" class="hover:text-zinc-300 transition-colors">am</a>
             <a href="#fmm" class="hover:text-zinc-300 transition-colors">fmm</a>
             <a href="#mdcontext" class="hover:text-zinc-300 transition-colors">mdcontext</a>
-            <a href="#nancyr" class="hover:text-zinc-300 transition-colors">Nancyr</a>
+            <a href="#nancyr" class="hover:text-zinc-300 transition-colors">nancyr</a>
             <div class="h-4 w-px bg-white/10 mx-2"></div>
             <a href="https://github.com/srobinson" target="_blank" rel="noopener"
                 class="flex items-center gap-1.5 hover:text-zinc-300 transition-colors">
@@ -137,7 +138,8 @@
                         class="inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 px-3 py-1 text-sm font-normal text-zinc-300 mb-6">
                         <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i> Vision
                     </div>
-                    <h1 id="manifesto" class="text-4xl md:text-5xl tracking-tight font-normal text-zinc-100 mb-6 leading-tight">
+                    <h1 id="manifesto"
+                        class="text-4xl md:text-5xl tracking-tight font-normal text-zinc-100 mb-6 leading-tight">
                         Helioy Context Manifesto
                     </h1>
                     <p class="text-xl md:text-2xl text-zinc-400 font-light leading-relaxed tracking-tight">
@@ -190,14 +192,16 @@
                         <!-- fmm card -->
                         <div
                             class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <div
-                                class="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-white/20 transition-colors">
-                                <i data-lucide="folder-open" class="w-5 h-5 text-zinc-300"></i>
+                            <div class="flex items-center gap-3 mb-5">
+                                <div
+                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
+                                    <i data-lucide="folder-open" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
+                                    <a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener"
+                                        class="hover:text-white transition-colors">fmm</a>
+                                </h3>
                             </div>
-                            <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-2">
-                                <a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener"
-                                    class="hover:text-white transition-colors">fmm</a>
-                            </h3>
                             <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
                                 Solves code context. Compiles code into structural metadata so models don't rediscover
                                 structure from scratch.
@@ -211,14 +215,16 @@
                         <!-- mdcontext card -->
                         <div
                             class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <div
-                                class="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-white/20 transition-colors">
-                                <i data-lucide="file-text" class="w-5 h-5 text-zinc-300"></i>
+                            <div class="flex items-center gap-3 mb-5">
+                                <div
+                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
+                                    <i data-lucide="file-text" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
+                                    <a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener"
+                                        class="hover:text-white transition-colors">mdcontext</a>
+                                </h3>
                             </div>
-                            <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-2">
-                                <a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener"
-                                    class="hover:text-white transition-colors">mdcontext</a>
-                            </h3>
                             <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
                                 Solves document context. Compiles documents into indexed sections, ranked results, and
                                 token-bounded context.
@@ -232,14 +238,16 @@
                         <!-- AM card -->
                         <div
                             class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <div
-                                class="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-white/20 transition-colors">
-                                <i data-lucide="brain" class="w-5 h-5 text-zinc-300"></i>
+                            <div class="flex items-center gap-3 mb-5">
+                                <div
+                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
+                                    <i data-lucide="brain" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
+                                    <a href="https://github.com/srobinson/attention-matters" target="_blank"
+                                        rel="noopener" class="hover:text-white transition-colors">AM</a>
+                                </h3>
                             </div>
-                            <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-2">
-                                <a href="https://github.com/srobinson/attention-matters" target="_blank" rel="noopener"
-                                    class="hover:text-white transition-colors">AM</a>
-                            </h3>
                             <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
                                 Solves reflective memory. Forms memory through conversation to track what becomes true
                                 through repeated dialogue.
@@ -253,14 +261,16 @@
                         <!-- nancyr card -->
                         <div
                             class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <div
-                                class="h-12 w-12 rounded-full bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-white/20 transition-colors">
-                                <i data-lucide="route" class="w-5 h-5 text-zinc-300"></i>
+                            <div class="flex items-center gap-3 mb-5">
+                                <div
+                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
+                                    <i data-lucide="route" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
+                                    <a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener"
+                                        class="hover:text-white transition-colors">nancyr</a>
+                                </h3>
                             </div>
-                            <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-2">
-                                <a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener"
-                                    class="hover:text-white transition-colors">nancyr</a>
-                            </h3>
                             <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
                                 The orchestration harness. Decides how context moves, what passes to which agent, and
                                 coordinates action.
@@ -410,7 +420,8 @@
 
                 <div class="space-y-10">
                     <div>
-                        <h3 id="geometry" class="text-base font-normal text-zinc-100 tracking-tight mb-4">Geometric Memory</h3>
+                        <h3 id="geometry" class="text-base font-normal text-zinc-100 tracking-tight mb-4">Geometric
+                            Memory</h3>
                         <p class="text-base text-zinc-400 mb-6">All constants derive from φ (golden ratio) and π.</p>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -490,15 +501,18 @@
                     <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
                         <div class="bg-zinc-950 p-6">
                             <p class="text-sm text-zinc-500 uppercase tracking-widest mb-4">Without fmm</p>
-                            <p class="text-base text-zinc-300 mb-2">Orient with grep, listings, and selective file reads</p>
+                            <p class="text-base text-zinc-300 mb-2">Orient with grep, listings, and selective file reads
+                            </p>
                             <p class="text-base text-zinc-500">Structure is reconstructed from scattered results</p>
                         </div>
                         <div class="bg-zinc-950 p-6 relative overflow-hidden">
                             <div class="absolute inset-0 bg-white/[0.02]"></div>
                             <p class="text-sm text-zinc-500 uppercase tracking-widest mb-4 relative z-10">With fmm</p>
-                            <p class="text-base text-zinc-100 mb-2 relative z-10">Query structure first, then open needed files
+                            <p class="text-base text-zinc-100 mb-2 relative z-10">Query structure first, then open
+                                needed files
                             </p>
-                            <p class="text-base text-zinc-300 relative z-10">See directory shape, key files, and dependency
+                            <p class="text-base text-zinc-300 relative z-10">See directory shape, key files, and
+                                dependency
                                 impact up front</p>
                         </div>
                     </div>

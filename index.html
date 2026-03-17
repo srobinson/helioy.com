@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>helioy. every token counts</title>
     <meta name="description"
-        content="Infrastructure for AI agents that waste less and remember more. Geometric memory, code intelligence, document search. All as MCP servers.">
+        content="Context engineering for AI agents. Geometric memory, structured context, code intelligence, document search, inter-agent messaging. Better representations, not larger context windows.">
     <meta property="og:title" content="helioy. every token counts">
-    <meta property="og:description" content="Infrastructure for AI agents that waste less and remember more.">
+    <meta property="og:description" content="Context engineering for AI agents. Better representations, not larger context windows.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://helioy.com">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -16,7 +16,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         h1[id],
         h2[id],
@@ -52,7 +52,6 @@
     <nav
         class="fixed inset-x-0 top-0 h-14 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md flex items-center gap-2 px-6 z-50">
         <div class="flex shrink-0 items-center gap-2.5 text-zinc-100">
-            <!-- Custom Geometric Logo -->
             <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="50" cy="50" r="46"></circle>
@@ -67,15 +66,15 @@
                 <line x1="58.5" y1="58.5" x2="67.5" y2="67.5"></line>
                 <line x1="41.5" y1="58.5" x2="32.5" y2="67.5"></line>
             </svg>
-            <span class="tracking-tight font-normal text-base">helioy</span>
+            <a href="#manifesto" class="hover:text-zinc-300 transition-colors"><span class="tracking-tight font-normal text-base">helioy</span></a>
         </div>
         <div
             class="flex min-w-0 flex-1 items-center gap-3 overflow-x-auto whitespace-nowrap pl-3 text-sm font-normal tracking-tight text-zinc-500 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <a href="#manifesto" class="hover:text-zinc-300 transition-colors">Manifesto</a>
+            <a href="#helix" class="hover:text-zinc-300 transition-colors">helix</a>
             <a href="#am" class="hover:text-zinc-300 transition-colors">am</a>
+            <a href="#cm" class="hover:text-zinc-300 transition-colors">cm</a>
             <a href="#fmm" class="hover:text-zinc-300 transition-colors">fmm</a>
-            <a href="#mdcontext" class="hover:text-zinc-300 transition-colors">mdcontext</a>
-            <a href="#nancyr" class="hover:text-zinc-300 transition-colors">nancyr</a>
+            <a href="#mdm" class="hover:text-zinc-300 transition-colors">mdm</a>
             <div class="h-4 w-px bg-white/10 mx-2"></div>
             <a href="https://github.com/srobinson" target="_blank" rel="noopener"
                 class="flex items-center gap-1.5 hover:text-zinc-300 transition-colors">
@@ -100,19 +99,39 @@
                     Tenets</a>
             </div>
 
-            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">Core Stack</h4>
+            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">The API</h4>
+            <div class="flex flex-col gap-1 mb-8">
+                <a href="#helix"
+                    class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
+                    <i data-lucide="layers" class="w-4 h-4"></i> helix
+                </a>
+            </div>
+
+            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">Adapters</h4>
             <div class="flex flex-col gap-1 mb-8">
                 <a href="#am"
                     class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
-                    <i data-lucide="brain" class="w-4 h-4"></i> am
+                    <i data-lucide="brain" class="w-4 h-4"></i> attention-matters
+                </a>
+                <a href="#cm"
+                    class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
+                    <i data-lucide="database" class="w-4 h-4"></i> context-matters
                 </a>
                 <a href="#fmm"
                     class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
-                    <i data-lucide="folder-open" class="w-4 h-4"></i> fmm
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> frontmatter-matters
                 </a>
-                <a href="#mdcontext"
+                <a href="#mdm"
                     class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
-                    <i data-lucide="file-text" class="w-4 h-4"></i> mdcontext
+                    <i data-lucide="file-text" class="w-4 h-4"></i> markdown-matters
+                </a>
+            </div>
+
+            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">Coordination</h4>
+            <div class="flex flex-col gap-1 mb-8">
+                <a href="#bus"
+                    class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
+                    <i data-lucide="radio" class="w-4 h-4"></i> helioy-bus
                 </a>
                 <a href="#nancyr"
                     class="text-base flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">
@@ -120,11 +139,14 @@
                 </a>
             </div>
 
-            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">Concepts</h4>
+            <h4 class="text-sm font-normal text-zinc-100 mb-4 tracking-tight px-3">Deeper</h4>
             <div class="flex flex-col gap-1">
-                <a href="#tactical-vs-reflective"
-                    class="text-base px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">Tactical
-                    vs Reflective</a>
+                <a href="#theory"
+                    class="text-base px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">The
+                    Theory</a>
+                <a href="#whats-next"
+                    class="text-base px-3 py-1.5 rounded-lg text-zinc-500 hover:text-zinc-300 hover:bg-white/5 transition-colors">What's
+                    Next</a>
             </div>
         </aside>
 
@@ -140,11 +162,11 @@
                     </div>
                     <h1 id="manifesto"
                         class="text-4xl md:text-5xl tracking-tight font-normal text-zinc-100 mb-6 leading-tight">
-                        Helioy Context Manifesto
+                        Every token counts.
                     </h1>
                     <p class="text-xl md:text-2xl text-zinc-400 font-light leading-relaxed tracking-tight">
                         LLMs do not primarily suffer from a lack of intelligence. They suffer from a lack of usable
-                        context.
+                        context. The future belongs to better representations, not larger context windows.
                     </p>
                 </header>
 
@@ -165,8 +187,11 @@
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="alert-circle" class="w-5 h-5 text-zinc-600 shrink-0 mt-0.5"></i>
-                            <span class="text-base text-zinc-300">Conversation history is too messy to trust as future
-                                memory.</span>
+                            <span class="text-base text-zinc-300">Conversation history is a transcript, not a memory.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-zinc-600 shrink-0 mt-0.5"></i>
+                            <span class="text-base text-zinc-300">Context rot degrades performance long before you hit the advertised limit.</span>
                         </li>
                     </ul>
 
@@ -175,20 +200,91 @@
                     </h2>
                     <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5 mb-14">
                         <p class="text-lg text-zinc-300 font-normal leading-relaxed">
-                            Helioy exists to turn raw environments into high-signal context for finite-context
-                            intelligence. Not search for its own sake. Not memory for its own sake. Not orchestration
-                            for its own sake. <strong class="text-zinc-100 font-medium">Context.</strong> Useful,
-                            compressed, structured, trustworthy context.
+                            Helioy turns raw environments into high-signal context for finite-context
+                            intelligence. Four types of organizational knowledge, each with its own optimal representation:
+                            code as topology, documentation as scoped sections, decisions as distilled entries, identity as
+                            geometric memory. One unified API curates both reads and writes.
+                            <strong class="text-zinc-100 font-medium">Every token earns its place.</strong>
                         </p>
                     </div>
 
                     <h2 class="text-2xl md:text-3xl tracking-tight font-normal text-zinc-100 mb-6 mt-16"
-                        id="product-group">The Product Group</h2>
+                        id="product-group">The Ecosystem</h2>
                     <p class="text-lg text-zinc-400 leading-relaxed mb-8">
-                        These are not separate ideas. They are different answers to the same problem.
+                        These are not separate products. They are different answers to the same question: how do you
+                        maximize signal per token for each type of context an agent needs?
                     </p>
 
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                        <!-- helix card -->
+                        <div
+                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors md:col-span-2">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div
+                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
+                                    <i data-lucide="layers" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">helix</h3>
+                            </div>
+                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
+                                The unified context API. One interface between your agents and every context source.
+                                An LLM-powered proxy curates both reads and writes. Your agent never touches individual backends.
+                            </p>
+                            <div
+                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
+                                How does context become curated intelligence?
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+                        <!-- am card -->
+                        <div
+                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div
+                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
+                                    <i data-lucide="brain" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
+                                    <a href="https://github.com/srobinson/attention-matters" target="_blank" rel="noopener"
+                                        class="hover:text-white transition-colors">attention-matters</a>
+                                </h3>
+                            </div>
+                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
+                                Identity as geometric memory. Quaternion positions on S&sup3;, phasor interference across
+                                dual manifolds, Kuramoto coupling. Conservation laws enforce finite attention. The owner
+                                shapes this. Agents read from it.
+                            </p>
+                            <div
+                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
+                                Who are we? What do we value?
+                            </div>
+                        </div>
+
+                        <!-- cm card -->
+                        <div
+                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+                            <div class="flex items-center gap-3 mb-5">
+                                <div
+                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
+                                    <i data-lucide="database" class="w-5 h-5 text-zinc-300"></i>
+                                </div>
+                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
+                                    <a href="https://github.com/srobinson/context-matters" target="_blank" rel="noopener"
+                                        class="hover:text-white transition-colors">context-matters</a>
+                                </h3>
+                            </div>
+                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
+                                Decisions as distilled knowledge. Facts, patterns, and trade-offs persisted across agent
+                                lifetimes. Hierarchical scopes, BLAKE3 deduplication, priority ordering by entry kind.
+                            </p>
+                            <div
+                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
+                                What do we know? What have we decided?
+                            </div>
+                        </div>
+
                         <!-- fmm card -->
                         <div
                             class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
@@ -199,12 +295,12 @@
                                 </div>
                                 <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
                                     <a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener"
-                                        class="hover:text-white transition-colors">fmm</a>
+                                        class="hover:text-white transition-colors">frontmatter-matters</a>
                                 </h3>
                             </div>
                             <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
-                                Solves code context. Compiles code into structural metadata so models don't rediscover
-                                structure from scratch.
+                                Code as indexed structure. Export maps, import graphs, dependency topology,
+                                file outlines. 5 structural queries replace 30+ file reads.
                             </p>
                             <div
                                 class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
@@ -212,7 +308,7 @@
                             </div>
                         </div>
 
-                        <!-- mdcontext card -->
+                        <!-- mdm card -->
                         <div
                             class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
                             <div class="flex items-center gap-3 mb-5">
@@ -221,63 +317,17 @@
                                     <i data-lucide="file-text" class="w-5 h-5 text-zinc-300"></i>
                                 </div>
                                 <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
-                                    <a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener"
-                                        class="hover:text-white transition-colors">mdcontext</a>
+                                    <a href="https://github.com/srobinson/markdown-matters" target="_blank" rel="noopener"
+                                        class="hover:text-white transition-colors">markdown-matters</a>
                                 </h3>
                             </div>
                             <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
-                                Solves document context. Compiles documents into indexed sections, ranked results, and
-                                token-bounded context.
+                                Documentation as scoped sections. Section-aware indexing, hybrid search
+                                (BM25 + semantic), 80%+ token compression. Relevant sections under budget, not entire directories.
                             </p>
                             <div
                                 class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
-                                What do docs mean within a finite budget?
-                            </div>
-                        </div>
-
-                        <!-- AM card -->
-                        <div
-                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <div class="flex items-center gap-3 mb-5">
-                                <div
-                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
-                                    <i data-lucide="brain" class="w-5 h-5 text-zinc-300"></i>
-                                </div>
-                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
-                                    <a href="https://github.com/srobinson/attention-matters" target="_blank"
-                                        rel="noopener" class="hover:text-white transition-colors">AM</a>
-                                </h3>
-                            </div>
-                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
-                                Solves reflective memory. Forms memory through conversation to track what becomes true
-                                through repeated dialogue.
-                            </p>
-                            <div
-                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
-                                What is becoming true over time?
-                            </div>
-                        </div>
-
-                        <!-- nancyr card -->
-                        <div
-                            class="group relative flex flex-col items-start p-7 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
-                            <div class="flex items-center gap-3 mb-5">
-                                <div
-                                    class="h-12 w-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
-                                    <i data-lucide="route" class="w-5 h-5 text-zinc-300"></i>
-                                </div>
-                                <h3 class="text-lg font-normal text-zinc-100 tracking-tight">
-                                    <a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener"
-                                        class="hover:text-white transition-colors">nancyr</a>
-                                </h3>
-                            </div>
-                            <p class="text-base text-zinc-500 leading-relaxed mb-5 flex-1">
-                                The orchestration harness. Decides how context moves, what passes to which agent, and
-                                coordinates action.
-                            </p>
-                            <div
-                                class="text-sm text-zinc-400 font-normal tracking-tight border-t border-white/5 pt-4 w-full">
-                                How does context become coordinated action?
+                                What do the docs say within a finite budget?
                             </div>
                         </div>
                     </div>
@@ -292,9 +342,7 @@
                             <div>
                                 <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Context is Finite
                                 </h4>
-                                <p class="text-base text-zinc-500 leading-relaxed">Tokens are a strict budget. Every
-                                    token spent on boilerplate or irrelevant context is a token stolen from reasoning
-                                    depth. Compression is not optional.</p>
+                                <p class="text-base text-zinc-500 leading-relaxed">Effective capacity is 50-75% of advertised limits. Performance degrades measurably beyond that threshold. Compression is thermodynamically mandated, not optional.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-5 p-6 rounded-2xl bg-white/[0.02] border border-white/5">
@@ -322,67 +370,62 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <h2 class="text-2xl md:text-3xl tracking-tight font-normal text-zinc-100 mb-6 mt-16"
-                        id="tactical-vs-reflective">Tactical Context vs Reflective Memory</h2>
-                    <p class="text-lg text-zinc-400 leading-relaxed mb-10">This distinction matters. The systems operate
-                        on different optimization targets.</p>
+            <div class="h-px w-full bg-white/5 my-20"></div>
 
-                    <div class="flex flex-col lg:flex-row gap-6 mb-16">
-                        <div class="flex-1 bg-zinc-900/50 border border-white/5 rounded-2xl overflow-hidden">
-                            <div class="p-5 border-b border-white/5 bg-white/[0.02]">
-                                <h4 class="text-base font-normal tracking-tight text-zinc-100">Tactical Context</h4>
-                                <p class="text-sm text-zinc-500 mt-1">fmm, mdcontext</p>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-sm text-zinc-400 mb-4 uppercase tracking-[0.15em] font-normal">Optimized
-                                    for</p>
-                                <ul class="text-base text-zinc-300 flex flex-col gap-3 mb-8">
-                                    <li class="flex items-center gap-3">
-                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Precision
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Compression
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Determinism
-                                    </li>
-                                </ul>
-                                <p class="text-sm text-zinc-400 mb-4 uppercase tracking-[0.15em] font-normal">Used for
-                                </p>
-                                <p class="text-base text-zinc-500 leading-relaxed">Code navigation, document lookup,
-                                    implementation decisions, immediate execution.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex-1 bg-zinc-900/50 border border-white/5 rounded-2xl overflow-hidden">
-                            <div class="p-5 border-b border-white/5 bg-white/[0.02]">
-                                <h4 class="text-base font-normal tracking-tight text-zinc-100">Reflective Memory</h4>
-                                <p class="text-sm text-zinc-500 mt-1">AM</p>
-                            </div>
-                            <div class="p-6">
-                                <p class="text-sm text-zinc-400 mb-4 uppercase tracking-[0.15em] font-normal">Optimized
-                                    for</p>
-                                <ul class="text-base text-zinc-300 flex flex-col gap-3 mb-8">
-                                    <li class="flex items-center gap-3">
-                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Salience &amp;
-                                        Synthesis
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Continuity
-                                    </li>
-                                    <li class="flex items-center gap-3">
-                                        <div class="h-1.5 w-1.5 rounded-full bg-zinc-500"></div> Debate &amp;
-                                        Interpretation
-                                    </li>
-                                </ul>
-                                <p class="text-sm text-zinc-400 mb-4 uppercase tracking-[0.15em] font-normal">Used for
-                                </p>
-                                <p class="text-base text-zinc-500 leading-relaxed">Organizational identity, strategic
-                                    continuity, durable beliefs, long-horizon meaning.</p>
-                            </div>
-                        </div>
+            <!-- helix -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div class="flex items-center gap-4 mb-5">
+                        <i data-lucide="layers" class="w-8 h-8 text-zinc-500"></i>
+                        <h2 id="helix" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
+                            helix
+                        </h2>
                     </div>
+                    <p class="text-lg text-zinc-400 leading-relaxed mb-8">
+                        A unified context API. One interface between your agents and every context source that matters.
+                        Both reads and writes pass through an LLM-powered proxy for curation. Tantivy handles candidate
+                        retrieval. The proxy shapes responses to token budget.
+                    </p>
+                </header>
+
+                <div
+                    class="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 overflow-x-auto mb-12 font-mono text-sm text-zinc-400 leading-relaxed">
+                    <pre><code>helix recall &lt;query&gt;     # curated context from all sources
+helix save &lt;content&gt;     # distill and store knowledge
+helix conflicts          # surface overlaps for resolution</code></pre>
+                </div>
+
+                <div class="space-y-5 mb-12">
+                    <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">Why the proxy matters</h3>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-4">
+                            Agents cannot be trusted to compress well. Research shows that coherent prose can degrade
+                            performance more than incoherent text. By putting a dedicated LLM in the infrastructure layer,
+                            you get consistent compression quality regardless of which agent is reading or writing,
+                            deduplication that works across agents, quality control on writes, and curation on reads
+                            shaped to the requesting agent's token budget.
+                        </p>
+                        <p class="text-base text-zinc-500 leading-relaxed">
+                            Professional editors at every mailroom rather than relying on each employee to write clearly.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 overflow-x-auto font-mono text-sm text-zinc-500 leading-relaxed">
+                    <pre><code>Agent  --&gt;  helix  --&gt;  Proxy LLM  --&gt;  Adapters
+                                |
+                           curates both
+                           reads and writes
+                                |
+                  +-------------+-------------+
+                  |             |             |             |
+            attention-    context-      markdown-    frontmatter-
+            matters       matters       matters       matters
+            (identity)    (decisions)   (docs)        (code)</code></pre>
                 </div>
             </section>
 
@@ -395,34 +438,53 @@
                         <i data-lucide="brain" class="w-8 h-8 text-zinc-500"></i>
                         <h2 id="am" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
                             <a href="https://github.com/srobinson/attention-matters" target="_blank" rel="noopener"
-                                class="hover:text-white transition-colors">am: Attention Matters</a>
+                                class="hover:text-white transition-colors">attention-matters</a>
                         </h2>
                     </div>
                     <p class="text-lg text-zinc-400 leading-relaxed">
-                        A geometric memory engine built on the S³ hypersphere. Memories aren't retrieved, they're
-                        surfaced through quaternion drift, phasor interference, and Kuramoto phase coupling across dual
-                        manifolds.
+                        A geometric memory engine on the S&sup3; hypersphere. Organizational identity lives as positions
+                        and movements in curved space rather than as text. The owner shapes this manifold deliberately.
+                        Agents read from it. Every query reshapes what gets recalled next.
                     </p>
                 </header>
 
                 <div
                     class="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 overflow-x-auto mb-12 font-mono text-sm text-zinc-400 leading-relaxed">
                     <pre><code>Query: "quaternion drift"
-    │
-    ▼
-┌─ activate ──── drift ──── interfere ──── couple ──── surface ──── compose ─-┐
-│                                                                             │
-│  Words activate      Occurrences    Conscious &amp;     Phases         Score,   │
-│  on the manifold     SLERP toward   subconscious    synchronize    rank,    │
-│  with IDF weights    each other     phasors         via Kuramoto   return   │
-└─────────────────────────────────────────────────────────────────────────────┘</code></pre>
+    |
+    v
++-- activate ---- drift ---- interfere ---- couple ---- surface ---- compose --+
+|                                                                              |
+|  Words activate      Occurrences    Conscious &amp;     Phases         Score,   |
+|  on the manifold     SLERP toward   subconscious    synchronize    rank,    |
+|  with IDF weights    each other     phasors         via Kuramoto   return   |
++------------------------------------------------------------------------------+</code></pre>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5 mb-10">
+                    <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">Why the owner curates this alone</h3>
+                    <p class="text-base text-zinc-400 leading-relaxed mb-4">
+                        attention-matters stores values, not facts. If agents could write to it, they would deposit what
+                        they observe frequently: code patterns, common decisions, recurring problems. Over time the manifold
+                        would become a reflection of what the system does, not what the organization aspires to.
+                    </p>
+                    <p class="text-base text-zinc-400 leading-relaxed mb-4">
+                        The owner pulls from external sources: research, market signals, strategic thinking, conversations
+                        that no agent in the system can generate. This is the one input that comes from outside the system's
+                        own operations. Without it, identity becomes a closed loop.
+                    </p>
+                    <p class="text-base text-zinc-500 leading-relaxed">
+                        The conservation laws (total mass M=1, coupling K<sub>CON</sub> + K<sub>SUB</sub> = 1)
+                        make attention a finite resource with zero-sum allocation. Concepts compete for position in curved
+                        space where proximity determines salience.
+                    </p>
                 </div>
 
                 <div class="space-y-10">
                     <div>
-                        <h3 id="geometry" class="text-base font-normal text-zinc-100 tracking-tight mb-4">Geometric
+                        <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">Geometric
                             Memory</h3>
-                        <p class="text-base text-zinc-400 mb-6">All constants derive from φ (golden ratio) and π.</p>
+                        <p class="text-base text-zinc-400 mb-6">All constants derive from &phi; (golden ratio) and &pi;.</p>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div
@@ -432,7 +494,7 @@
                                     <h4 class="text-base font-normal text-zinc-100 tracking-tight">Quaternion positions
                                     </h4>
                                 </div>
-                                <p class="text-sm text-zinc-500 leading-relaxed">Each word instance lives on S³. SLERP
+                                <p class="text-sm text-zinc-500 leading-relaxed">Each word instance lives on S&sup3;. SLERP
                                     interpolation along geodesics creates continuous movement.</p>
                             </div>
                             <div
@@ -449,11 +511,12 @@
                                 class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
                                 <div class="flex items-center gap-3 mb-4">
                                     <i data-lucide="aperture" class="w-6 h-6 text-zinc-400 shrink-0"></i>
-                                    <h4 class="text-base font-normal text-zinc-100 tracking-tight">Golden-angle phasors
+                                    <h4 class="text-base font-normal text-zinc-100 tracking-tight">Dual manifolds
                                     </h4>
                                 </div>
-                                <p class="text-sm text-zinc-500 leading-relaxed">Phase distribution naturally follows
-                                    phyllotaxis (2π/φ²) for maximal harmonic separation.</p>
+                                <p class="text-sm text-zinc-500 leading-relaxed">Conscious and subconscious manifolds with
+                                    phasor interference. Not all knowledge should be equally accessible. Some surfaces only
+                                    when the right query activates the right pattern.</p>
                             </div>
                             <div
                                 class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
@@ -463,7 +526,8 @@
                                     </h4>
                                 </div>
                                 <p class="text-sm text-zinc-500 leading-relaxed">Phases synchronize dynamically between
-                                    co-activated neighborhoods, modulated by network plasticity.</p>
+                                    co-activated neighborhoods. Related concepts form natural clusters that emerge from
+                                    interaction rather than being programmed.</p>
                             </div>
                         </div>
                     </div>
@@ -482,6 +546,58 @@
 
             <div class="h-px w-full bg-white/5 my-20"></div>
 
+            <!-- context-matters -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div class="flex items-center gap-4 mb-5">
+                        <i data-lucide="database" class="w-8 h-8 text-zinc-500"></i>
+                        <h2 id="cm" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
+                            <a href="https://github.com/srobinson/context-matters" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">context-matters</a>
+                        </h2>
+                    </div>
+                    <p class="text-lg text-zinc-400 leading-relaxed mb-8">
+                        Structured context store. Facts, decisions, patterns, trade-offs, and corrections persisted across
+                        agent lifetimes. The operational memory of the system.
+                    </p>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="git-branch" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Hierarchical Scopes</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">global &gt; project &gt; repo &gt; session.
+                            Visibility flows downward automatically. A project-level decision surfaces when an agent queries at
+                            repo scope. The hierarchy is the frame.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">BLAKE3 Deduplication</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Content-addressed storage prevents duplication
+                            across agents. Agent A does not know what Agent B already stored. context-matters does.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="tag" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Typed Entries</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Eight entry kinds with priority ordering.
+                            Facts, decisions, patterns, preferences, observations, lessons, feedback, assessments.
+                            Feedback entries receive highest recall priority.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="search" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">SQLite + FTS5</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Full-text search over structured entries.
+                            No external dependencies. Ships as a single binary. Rust.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px w-full bg-white/5 my-20"></div>
+
             <!-- fmm -->
             <section class="mb-24">
                 <header class="mb-12">
@@ -489,30 +605,25 @@
                         <i data-lucide="folder-open" class="w-8 h-8 text-zinc-500"></i>
                         <h2 id="fmm" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
                             <a href="https://github.com/srobinson/fmm" target="_blank" rel="noopener"
-                                class="hover:text-white transition-colors">fmm: Frontmatter Matters</a>
+                                class="hover:text-white transition-colors">frontmatter-matters</a>
                         </h2>
                     </div>
                     <p class="text-lg text-zinc-400 leading-relaxed mb-8">
-                        Structural intelligence for codebases. The main value is faster orientation. fmm maintains a
-                        single SQLite database at the project root indexing exports, imports, dependencies, line
-                        counts, and file outlines.
+                        Structural intelligence for codebases. A single SQLite database at the project root
+                        indexing exports, imports, dependencies, line counts, and file outlines. Structure at O(1).
                     </p>
 
                     <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
                         <div class="bg-zinc-950 p-6">
                             <p class="text-sm text-zinc-500 uppercase tracking-widest mb-4">Without fmm</p>
-                            <p class="text-base text-zinc-300 mb-2">Orient with grep, listings, and selective file reads
-                            </p>
-                            <p class="text-base text-zinc-500">Structure is reconstructed from scattered results</p>
+                            <p class="text-base text-zinc-300 mb-2">30+ file reads to orient</p>
+                            <p class="text-base text-zinc-500">Structure reconstructed from scattered grep results</p>
                         </div>
                         <div class="bg-zinc-950 p-6 relative overflow-hidden">
                             <div class="absolute inset-0 bg-white/[0.02]"></div>
                             <p class="text-sm text-zinc-500 uppercase tracking-widest mb-4 relative z-10">With fmm</p>
-                            <p class="text-base text-zinc-100 mb-2 relative z-10">Query structure first, then open
-                                needed files
-                            </p>
-                            <p class="text-base text-zinc-300 relative z-10">See directory shape, key files, and
-                                dependency
+                            <p class="text-base text-zinc-100 mb-2 relative z-10">5 structural queries</p>
+                            <p class="text-base text-zinc-300 relative z-10">Directory shape, key files, dependency
                                 impact up front</p>
                         </div>
                     </div>
@@ -532,7 +643,7 @@
                                 <tbody class="divide-y divide-white/5">
                                     <tr>
                                         <td class="py-4 px-5 text-zinc-400 font-mono text-sm">fmm_lookup_export</td>
-                                        <td class="py-4 px-5 text-zinc-500">Find which file defines a symbol — O(1)</td>
+                                        <td class="py-4 px-5 text-zinc-500">Find which file defines a symbol at O(1)</td>
                                     </tr>
                                     <tr>
                                         <td class="py-4 px-5 text-zinc-400 font-mono text-sm">fmm_read_symbol</td>
@@ -548,44 +659,33 @@
                                         <td class="py-4 px-5 text-zinc-400 font-mono text-sm">fmm_file_outline</td>
                                         <td class="py-4 px-5 text-zinc-500">Table of contents with line ranges</td>
                                     </tr>
+                                    <tr>
+                                        <td class="py-4 px-5 text-zinc-400 font-mono text-sm">fmm_list_files</td>
+                                        <td class="py-4 px-5 text-zinc-500">Full project topology in one call</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-
-                    <div
-                        class="bg-zinc-950/80 border border-white/10 rounded-2xl p-7 overflow-x-auto mb-12 font-mono text-sm text-zinc-500 leading-relaxed">
-                        <pre><code>                        ┌──────────────────────────────────────────────────────┐
-                        │                     fmm pipeline                     │
-                        │                                                      │
-  Source Files          │   ┌───────────┐    ┌───────────┐    ┌────────────┐   │    LLM / MCP Client
-  ─────────────────────►│   │  Parser   │───►│ Extractor │───►│  SQLite    │   │◄──────────────────
-  .ts .py .rs .go .c    │   │(tree-sit) │    │           │    │  Writer    │   │   fmm_lookup_export
-  .java .cpp .cs .rb    │   └───────────┘    └───────────┘    └─────┬──────┘   │   fmm_read_symbol
-                        │                                     ┌─────▼──────┐   │   fmm_dependency_graph
-                        │                                     │  .fmm.db   │   │   fmm_file_outline
-                        │                                     └────────────┘   │
-                        └──────────────────────────────────────────────────────┘</code></pre>
                     </div>
                 </div>
             </section>
 
             <div class="h-px w-full bg-white/5 my-20"></div>
 
-            <!-- mdcontext -->
+            <!-- mdm -->
             <section class="mb-24">
                 <header class="mb-12">
                     <div class="flex items-center gap-4 mb-5">
                         <i data-lucide="file-text" class="w-8 h-8 text-zinc-500"></i>
-                        <h2 id="mdcontext" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
-                            <a href="https://github.com/srobinson/mdcontext" target="_blank" rel="noopener"
-                                class="hover:text-white transition-colors">mdcontext</a>
+                        <h2 id="mdm" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
+                            <a href="https://github.com/srobinson/markdown-matters" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">markdown-matters</a>
                         </h2>
                     </div>
                     <p class="text-lg text-zinc-400 leading-relaxed mb-8">
-                        Documentation is traditionally consumed linearly. For finite-context intelligence, it must be
-                        consumed hierarchically and budget-consciously. mdcontext is an AST-aware semantic chunker and
-                        token-bounded retrieval engine.
+                        Structural intelligence for documentation. AST-aware semantic chunking and
+                        token-bounded retrieval. Your agent gets relevant sections under budget, not entire directories.
+                        TypeScript + Effect.
                     </p>
                 </header>
 
@@ -602,15 +702,14 @@
                         <i data-lucide="hourglass" class="w-6 h-6 text-zinc-400 mb-4"></i>
                         <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Token Bounding</h4>
                         <p class="text-sm text-zinc-500 leading-relaxed">Retrieval strictly respects context window
-                            budgets. If a requested section is too large, it automatically summarizes or intelligently
-                            truncates.</p>
+                            budgets. Too large sections are automatically summarized or intelligently truncated.</p>
                     </div>
                     <div
                         class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
                         <i data-lucide="navigation" class="w-6 h-6 text-zinc-400 mb-4"></i>
-                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Semantic Routing</h4>
-                        <p class="text-sm text-zinc-500 leading-relaxed">Maps user queries to the most relevant document
-                            nodes using fast, local embeddings before any full LLM synthesis happens.</p>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Hybrid Search</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">BM25 + semantic search. Maps queries to the most
+                            relevant document nodes using fast, local embeddings before any full LLM synthesis.</p>
                     </div>
                 </div>
 
@@ -631,14 +730,12 @@
                                         nodes</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-4 px-5 text-zinc-400 font-mono text-sm">md_read_section</td>
-                                    <td class="py-4 px-5 text-zinc-500">Retrieve a specific document section cleanly by
-                                        its AST heading path</td>
+                                    <td class="py-4 px-5 text-zinc-400 font-mono text-sm">md_context</td>
+                                    <td class="py-4 px-5 text-zinc-500">Retrieve a specific document section by its AST heading path</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-4 px-5 text-zinc-400 font-mono text-sm">md_tree</td>
-                                    <td class="py-4 px-5 text-zinc-500">Get the hierarchical structural outline of a
-                                        document for fast navigation</td>
+                                    <td class="py-4 px-5 text-zinc-400 font-mono text-sm">md_structure</td>
+                                    <td class="py-4 px-5 text-zinc-500">Hierarchical structural outline for fast navigation</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -648,98 +745,340 @@
 
             <div class="h-px w-full bg-white/5 my-20"></div>
 
-            <!-- Nancyr V2 -->
+            <!-- helioy-bus -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div class="flex items-center gap-4 mb-5">
+                        <i data-lucide="radio" class="w-8 h-8 text-zinc-500"></i>
+                        <h2 id="bus" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
+                            <a href="https://github.com/srobinson/helioy-bus" target="_blank" rel="noopener"
+                                class="hover:text-white transition-colors">helioy-bus</a>
+                        </h2>
+                    </div>
+                    <p class="text-lg text-zinc-400 leading-relaxed mb-8">
+                        Inter-agent messaging. SQLite registry, file-based mailboxes, tmux nudges. Direct, role-based,
+                        and broadcast addressing. No central daemon. Coordination through shared state.
+                    </p>
+                </header>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="send" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">Three addressing modes</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Direct (agent to agent), role-based (to any agent
+                            filling a role), broadcast (to all). The right granularity for the right message.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="hard-drive" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">No central daemon</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Each agent spawns its own bus process. Shared
+                            filesystem state for coordination. If one agent crashes, the others continue. Graceful
+                            degradation by design.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                        <i data-lucide="terminal" class="w-6 h-6 text-zinc-400 mb-4"></i>
+                        <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-2">tmux integration</h4>
+                        <p class="text-sm text-zinc-500 leading-relaxed">Agents in tmux panes receive nudges when messages
+                            arrive. Native terminal workflow. No browser, no electron, no overhead.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px w-full bg-white/5 my-20"></div>
+
+            <!-- nancyr -->
             <section class="mb-24">
                 <header class="mb-12">
                     <div class="flex items-center gap-4 mb-5">
                         <i data-lucide="route" class="w-8 h-8 text-zinc-500"></i>
                         <h2 id="nancyr" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100">
                             <a href="https://github.com/srobinson/nancyr" target="_blank" rel="noopener"
-                                class="hover:text-white transition-colors">Nancy V2</a>
+                                class="hover:text-white transition-colors">nancyr</a>
                         </h2>
                     </div>
                     <p class="text-lg text-zinc-400 leading-relaxed mb-8">
-                        A self-improving runtime for collaborative intelligence. It coordinates specialized agents,
-                        routes context, preserves coherence under pressure, and improves teamwork over time.
+                        Multi-agent orchestrator. Context routing between agents, token budgets, adaptive coordination.
+                        Decides how context moves, what passes to which agent, and when to intervene. Rust.
+                    </p>
+                </header>
+
+                <div class="p-7 border border-white/5 bg-white/[0.02] rounded-2xl mb-10">
+                    <h3 class="text-base font-normal tracking-tight text-zinc-100 mb-4">Where this started</h3>
+                    <p class="text-base text-zinc-400 leading-relaxed">
+                        Before nancyr, there was
+                        <a href="https://github.com/srobinson/nancy" target="_blank" rel="noopener"
+                            class="text-zinc-200 hover:text-white transition-colors">nancy</a>:
+                        an autonomous task execution loop with context awareness and token management. The current
+                        runtime grows out of that earlier experiment in iterative agent work.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-normal tracking-tight text-zinc-100 mb-6">The four learning loops</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                            <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">1. Task</div>
+                            <p class="text-base text-zinc-300 mb-4">Did the team complete the task well?</p>
+                            <p class="text-sm text-zinc-500">Signals: correctness, speed, rework, regressions</p>
+                        </div>
+                        <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                            <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">2. Coordination</div>
+                            <p class="text-base text-zinc-300 mb-4">Was the work split correctly?</p>
+                            <p class="text-sm text-zinc-500">Signals: duplicate effort, poor sequencing, blocked deps</p>
+                        </div>
+                        <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                            <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">3. Protocol</div>
+                            <p class="text-base text-zinc-300 mb-4">Did the protocol help or hinder?</p>
+                            <p class="text-sm text-zinc-500">Signals: bus message quality, escalation policy clarity</p>
+                        </div>
+                        <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
+                            <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">4. Identity</div>
+                            <p class="text-base text-zinc-300 mb-4">Are the roles themselves right?</p>
+                            <p class="text-sm text-zinc-500">Signals: recurring confusion, missing specialist roles</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px w-full bg-white/5 my-20"></div>
+
+            <!-- The Theory -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div
+                        class="inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 px-3 py-1 text-sm font-normal text-zinc-300 mb-6">
+                        <i data-lucide="flask-conical" class="w-4 h-4 mr-2"></i> Theory
+                    </div>
+                    <h2 id="theory" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100 mb-6">
+                        The Theory
+                    </h2>
+                    <p class="text-lg text-zinc-400 leading-relaxed">
+                        This architecture came from asking what origin-of-life research, autocatalytic closure theory,
+                        and thermodynamics teach us about building autonomous systems.
+                    </p>
+                </header>
+
+                <div class="space-y-8">
+                    <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">Autocatalytic closure</h3>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-4">
+                            Stuart Kauffman's core insight: a system becomes self-sustaining when its components form closed
+                            loops of mutual production. No single component catalyzes itself, but the set collectively
+                            catalyzes its own existence. There is a critical threshold of diversity below which nothing
+                            sustains and above which closure becomes inevitable.
+                        </p>
+                        <p class="text-base text-zinc-400 leading-relaxed">
+                            Five capabilities form the minimum autocatalytic set for agency: OBSERVE, DELIBERATE, ACT,
+                            EVALUATE, REMEMBER. Remove any one and the system either collapses or drifts into error
+                            catastrophe. In a multi-agent system, these capabilities distribute across specialists
+                            that catalyze each other.
+                        </p>
+                    </div>
+
+                    <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">Context rot</h3>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-4">
+                            The thermodynamic constraint. Empirically validated across every frontier model: performance
+                            degrades as context grows, effective capacity is 50-75% of advertised limits, and coherent prose
+                            can hurt more than help.
+                        </p>
+                        <p class="text-base text-zinc-400 leading-relaxed">
+                            The engineering response is compression at every boundary. Each adapter transforms raw context
+                            into a representation that maximizes signal per token. The proxy LLM curates both reads and
+                            writes because agents cannot be trusted to compress well.
+                        </p>
+                    </div>
+
+                    <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <h3 class="text-base font-normal text-zinc-100 tracking-tight mb-4">Three message types</h3>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-4">
+                            Inter-agent messages in an autocatalytic system are catalytic signals, not data transfer.
+                            Each type has distinct compression requirements and flow direction:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                            <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+                                <p class="text-sm font-normal text-zinc-100 mb-2">SUBSTRATE &uarr;</p>
+                                <p class="text-sm text-zinc-500">Upward flow. Compressed observations. Lossy is acceptable. Volume reduced to signal.</p>
+                            </div>
+                            <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+                                <p class="text-sm font-normal text-zinc-100 mb-2">FRAME &darr;</p>
+                                <p class="text-sm text-zinc-500">Downward flow. Interpretive context that reshapes processing. Small input, massive leverage.</p>
+                            </div>
+                            <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl">
+                                <p class="text-sm font-normal text-zinc-100 mb-2">REPAIR &harr;</p>
+                                <p class="text-sm text-zinc-500">Lateral flow. Error correction. Targeted and actionable. The Eigen's paradox resolution.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <p class="text-base text-zinc-500 leading-relaxed">
+                            The theoretical framework lives in
+                            <a href="https://github.com/srobinson/helioy-identity/tree/main/docs.llm" target="_blank" rel="noopener"
+                                class="text-zinc-300 hover:text-white transition-colors">docs.llm/</a>:
+                            twelve documents tracing the path from Von Neumann's constructor duality through Kauffman's
+                            autocatalytic sets, Eigen's error threshold, the compression problem, and context rot, to their
+                            concrete implementation in this architecture.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="h-px w-full bg-white/5 my-20"></div>
+
+            <!-- What's Next -->
+            <section class="mb-24">
+                <header class="mb-12">
+                    <div
+                        class="inline-flex items-center justify-center rounded-full bg-white/5 border border-white/10 px-3 py-1 text-sm font-normal text-zinc-300 mb-6">
+                        <i data-lucide="compass" class="w-4 h-4 mr-2"></i> Roadmap
+                    </div>
+                    <h2 id="whats-next" class="text-3xl md:text-4xl tracking-tight font-normal text-zinc-100 mb-6">
+                        What's next
+                    </h2>
+                    <p class="text-lg text-zinc-400 leading-relaxed">
+                        The context problem is largely solved. The next problem: how does the system that produces agent
+                        behavior improve itself over time?
                     </p>
                 </header>
 
                 <div class="space-y-10">
-                    <div class="p-7 border border-white/5 bg-white/[0.02] rounded-2xl">
-                        <h3 class="text-base font-normal tracking-tight text-zinc-100 mb-4">Where This Started</h3>
-                        <p class="text-base text-zinc-400 leading-relaxed">
-                            Before <code>nancyr</code>, there was
-                            <a href="https://github.com/srobinson/nancy" target="_blank" rel="noopener"
-                                class="text-zinc-200 hover:text-white transition-colors">nancy</a>:
-                            an autonomous task execution loop with context awareness and token management. The current
-                            runtime grows out of that earlier experiment in iterative agent work.
-                        </p>
-                    </div>
-
-                    <div class="p-7 border border-white/5 bg-white/[0.02] rounded-2xl">
-                        <h3 class="text-base font-normal tracking-tight text-zinc-100 mb-4">The Optimization Target</h3>
+                    <!-- System Genome -->
+                    <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-4">The system genome</h3>
                         <p class="text-base text-zinc-400 leading-relaxed mb-6">
-                            The deeper optimization target is <strong class="text-zinc-200 font-normal">quality of
-                                collaboration</strong>. `nancyr` should optimize how intelligence is organized, not just
-                            how prompts are written.
+                            The system has a genome: agent definitions, skills, prompts, MCP server code, context
+                            configuration, orchestration patterns. Each is independently modifiable. Context is what flows
+                            through the system. The genome is what shapes it.
                         </p>
-                        <ul class="text-base text-zinc-500 grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle"
-                                    class="w-4 h-4 text-zinc-400"></i> Division of labor</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle"
-                                    class="w-4 h-4 text-zinc-400"></i> Timing of intervention</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle"
-                                    class="w-4 h-4 text-zinc-400"></i> Precision of handoffs</li>
-                            <li class="flex items-center gap-3"><i data-lucide="check-circle"
-                                    class="w-4 h-4 text-zinc-400"></i> Correctness of escalation</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-normal tracking-tight text-zinc-100 mb-6" id="four-loops">The Four
-                            Learning Loops</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-                            <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
-                                <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">1. Task
-                                    Loop</div>
-                                <p class="text-base text-zinc-300 mb-4">Did the team complete the task well?</p>
-                                <p class="text-sm text-zinc-500">Signals: correctness, speed, rework, regressions</p>
-                            </div>
-
-                            <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
-                                <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">2.
-                                    Coordination Loop</div>
-                                <p class="text-base text-zinc-300 mb-4">Was the work split correctly?</p>
-                                <p class="text-sm text-zinc-500">Signals: duplicate effort, poor sequencing, blocked
-                                    deps</p>
-                            </div>
-
-                            <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
-                                <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">3.
-                                    Protocol Loop</div>
-                                <p class="text-base text-zinc-300 mb-4">Did the protocol help or hinder?</p>
-                                <p class="text-sm text-zinc-500">Signals: bus message quality, escalation policy clarity
-                                </p>
-                            </div>
-
-                            <div class="p-6 border border-white/5 rounded-2xl hover:bg-white/[0.02] transition-colors">
-                                <div class="text-sm font-normal text-zinc-100 uppercase tracking-widest mb-2">4.
-                                    Identity Loop</div>
-                                <p class="text-base text-zinc-300 mb-4">Are the roles themselves right?</p>
-                                <p class="text-sm text-zinc-500">Signals: recurring confusion, missing specialist roles
-                                </p>
-                            </div>
-
+                        <div class="border border-white/5 rounded-xl overflow-hidden text-sm">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-white/[0.02] border-b border-white/5">
+                                        <th class="py-3 px-5 font-normal text-zinc-300">Unit</th>
+                                        <th class="py-3 px-5 font-normal text-zinc-300">Example</th>
+                                        <th class="py-3 px-5 font-normal text-zinc-300">Mutation cost</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-white/5 text-zinc-500">
+                                    <tr>
+                                        <td class="py-3 px-5 text-zinc-400">Prompt</td>
+                                        <td class="py-3 px-5">System prompt for an agent</td>
+                                        <td class="py-3 px-5">Low</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-5 text-zinc-400">Skill</td>
+                                        <td class="py-3 px-5">analyze_blast_radius</td>
+                                        <td class="py-3 px-5">Medium</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-5 text-zinc-400">Agent definition</td>
+                                        <td class="py-3 px-5">Role, constraints, persona</td>
+                                        <td class="py-3 px-5">Medium</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-5 text-zinc-400">MCP endpoint</td>
+                                        <td class="py-3 px-5">/helix/recall handler</td>
+                                        <td class="py-3 px-5">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-5 text-zinc-400">Orchestration</td>
+                                        <td class="py-3 px-5">Warroom team composition</td>
+                                        <td class="py-3 px-5">High</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
-                    <div class="pt-10 mt-14 border-t border-white/5">
-                        <h3 class="text-xl font-normal tracking-tight text-zinc-100 mb-5">Final Thesis</h3>
-                        <p class="text-lg text-zinc-400 leading-relaxed pl-5 border-l-2 border-zinc-700 italic">
-                            `nancyr` should become a self-improving runtime for collaborative intelligence, where
-                            specialized agents, structured context, reflective memory, and explicit coordination
-                            protocols combine into compounding execution quality over time.
+                    <!-- The CRITIC -->
+                    <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-4">The CRITIC</h3>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-6">
+                            A process that observes system-level signals (task outcomes, token economics, human corrections,
+                            context quality), diagnoses which genome unit is responsible for observed behavior, proposes
+                            targeted mutations, tests them in controlled conditions, and selects improvements.
+                        </p>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-6">
+                            Every human correction is a fitness signal that tells you which genome unit to mutate. Wrong approach
+                            points to the agent definition. Wrong tool use points to skills. Wrong reasoning points to the
+                            prompt. The correction type localizes the mutation.
+                        </p>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-8">
+                            The CRITIC uses attention-matters as the fitness function. Mutations must align with values,
+                            not just improve metrics. The owner shapes identity. The CRITIC evaluates mutations against that
+                            identity. The system evolves toward the owner's vision.
+                        </p>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl text-center">
+                                <p class="text-sm font-normal text-zinc-300 mb-1">Phase 1</p>
+                                <p class="text-xs text-zinc-500">Owner IS the critic</p>
+                            </div>
+                            <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl text-center">
+                                <p class="text-sm font-normal text-zinc-300 mb-1">Phase 2</p>
+                                <p class="text-xs text-zinc-500">Owner WITH tooling</p>
+                            </div>
+                            <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl text-center">
+                                <p class="text-sm font-normal text-zinc-300 mb-1">Phase 3</p>
+                                <p class="text-xs text-zinc-500">CRITIC proposes, owner approves</p>
+                            </div>
+                            <div class="p-4 bg-white/[0.02] border border-white/5 rounded-xl text-center">
+                                <p class="text-sm font-normal text-zinc-300 mb-1">Phase 4</p>
+                                <p class="text-xs text-zinc-500">Autonomous within guardrails</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agent Self-Evolution -->
+                    <div class="p-7 rounded-2xl bg-white/[0.02] border border-white/5">
+                        <h3 class="text-lg font-normal text-zinc-100 tracking-tight mb-4">The agent as self-evolver</h3>
+                        <p class="text-base text-zinc-400 leading-relaxed mb-6">
+                            Agents are not passive consumers of infrastructure. They have primitives. They are upstream.
+                            They should experiment with their own tooling, context queries, and work patterns, measure
+                            outcomes, and adjust. Four evolution levels run simultaneously:
+                        </p>
+
+                        <div class="space-y-4">
+                            <div class="flex gap-5 items-start">
+                                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 font-mono text-sm shrink-0">1</div>
+                                <div>
+                                    <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-1">Agent self-evolution</h4>
+                                    <p class="text-sm text-zinc-500">Fast, local, full authority. The agent experiments with how it queries helix, which tools it calls, how it decomposes tasks. Discovers what works. Deposits those discoveries.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5 items-start">
+                                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 font-mono text-sm shrink-0">2</div>
+                                <div>
+                                    <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-1">Context evolution</h4>
+                                    <p class="text-sm text-zinc-500">Cross-session, curated. Agent knowledge deposits improve future agents. The proxy LLM quality-controls the write path. Better deposits produce better recalls.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5 items-start">
+                                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 font-mono text-sm shrink-0">3</div>
+                                <div>
+                                    <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-1">System evolution</h4>
+                                    <p class="text-sm text-zinc-500">Deliberate, tested. The genome: skills, prompts, configs, code. CRITIC proposes mutations from aggregated agent assessments. Owner approves.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5 items-start">
+                                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-zinc-900 border border-white/10 text-zinc-400 font-mono text-sm shrink-0">4</div>
+                                <div>
+                                    <h4 class="text-base font-normal tracking-tight text-zinc-100 mb-1">Identity evolution</h4>
+                                    <p class="text-sm text-zinc-500">Owner exclusive. attention-matters. The geometric manifold that shapes the fitness landscape for everything else. The owner curates the terrain. The system evolves to thrive on it.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Closing -->
+                    <div class="pt-10 mt-6 border-t border-white/5">
+                        <p class="text-lg text-zinc-400 leading-relaxed pl-5 border-l-2 border-zinc-700">
+                            The gap between "agents that use tools" and "agents that evolve their own tooling" is the gap
+                            between a pipeline and a living system.
                         </p>
                     </div>
                 </div>
